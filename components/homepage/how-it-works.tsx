@@ -2,7 +2,6 @@ export default function HowItWorks() {
     return (
         <section className="py-20 bg-background">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Header */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
                         <span className="text-primary font-medium text-sm">
@@ -21,25 +20,18 @@ export default function HowItWorks() {
                     </p>
                 </div>
 
-                {/* Steps Container */}
                 <div className="relative">
-                    {/* Connection Line */}
                     <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-secondary via-accent to-primary transform -translate-y-1/2 z-0"></div>
 
-                    {/* Steps Grid */}
                     <div className="grid md:grid-cols-3 gap-12 relative z-10">
 
-                        {/* Step 1: Quick Setup */}
                         <div className="text-center group">
-                            {/* Step Number */}
                             <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-shadow">
                                 <span className="font-headings text-2xl font-bold text-primary">1</span>
                             </div>
 
-                            {/* Visual Mock-up */}
                             <div className="bg-neutral rounded-2xl p-6 mb-6 hover:shadow-lg transition-shadow">
                                 <div className="bg-background rounded-xl p-4 space-y-3">
-                                    {/* Setup Form Mockup */}
                                     <div className="flex items-center justify-between">
                                         <h4 className="font-headings font-semibold text-primary text-sm">Shop Setup</h4>
                                         <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
@@ -74,7 +66,6 @@ export default function HowItWorks() {
                                 and you're ready to go.
                             </p>
 
-                            {/* Features List */}
                             <ul className="mt-4 space-y-2 text-sm text-left">
                                 <li className="flex items-center text-foreground-muted">
                                     <span className="w-4 h-4 bg-secondary/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
@@ -97,17 +88,13 @@ export default function HowItWorks() {
                             </ul>
                         </div>
 
-                        {/* Step 2: Record Services */}
                         <div className="text-center group">
-                            {/* Step Number */}
                             <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-shadow">
                                 <span className="font-headings text-2xl font-bold text-white">2</span>
                             </div>
 
-                            {/* Visual Mock-up */}
                             <div className="bg-neutral rounded-2xl p-6 mb-6 hover:shadow-lg transition-shadow">
                                 <div className="bg-background rounded-xl p-4 space-y-3">
-                                    {/* Service Recording Mockup */}
                                     <div className="flex items-center justify-between">
                                         <h4 className="font-headings font-semibold text-primary text-sm">New Service</h4>
                                         <div className="text-xs text-accent bg-accent/10 px-2 py-1 rounded">Live</div>
@@ -144,7 +131,6 @@ export default function HowItWorks() {
                                 <strong className="text-accent"> automatically calculated</strong>.
                             </p>
 
-                            {/* Features List */}
                             <ul className="mt-4 space-y-2 text-sm text-left">
                                 <li className="flex items-center text-foreground-muted">
                                     <span className="w-4 h-4 bg-accent/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
@@ -167,17 +153,13 @@ export default function HowItWorks() {
                             </ul>
                         </div>
 
-                        {/* Step 3: Track & Grow */}
                         <div className="text-center group">
-                            {/* Step Number */}
                             <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-shadow">
                                 <span className="font-headings text-2xl font-bold text-white">3</span>
                             </div>
 
-                            {/* Visual Mock-up */}
                             <div className="bg-neutral rounded-2xl p-6 mb-6 hover:shadow-lg transition-shadow">
                                 <div className="bg-background rounded-xl p-4 space-y-3">
-                                    {/* Analytics Mockup */}
                                     <div className="flex items-center justify-between">
                                         <h4 className="font-headings font-semibold text-primary text-sm">Analytics</h4>
                                         <div className="text-xs text-accent">↗️ +25%</div>
@@ -194,7 +176,6 @@ export default function HowItWorks() {
                                         </div>
                                     </div>
 
-                                    {/* Simple Chart */}
                                     <div className="flex items-end space-x-1 h-12">
                                         <div className="bg-accent/30 w-2 h-6 rounded-t"></div>
                                         <div className="bg-accent/50 w-2 h-8 rounded-t"></div>
@@ -216,7 +197,6 @@ export default function HowItWorks() {
                                 <strong className="text-primary"> grow your revenue</strong>.
                             </p>
 
-                            {/* Features List */}
                             <ul className="mt-4 space-y-2 text-sm text-left">
                                 <li className="flex items-center text-foreground-muted">
                                     <span className="w-4 h-4 bg-primary/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
@@ -241,7 +221,6 @@ export default function HowItWorks() {
                     </div>
                 </div>
 
-                {/* Bottom Section */}
                 <div className="text-center mt-16">
                     <div className="bg-gradient-to-r from-accent/10 to-secondary/10 rounded-3xl p-8 md:p-12">
                         <h3 className="font-headings text-2xl md:text-3xl font-bold text-primary mb-4">

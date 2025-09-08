@@ -24,7 +24,6 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
 
-                    {/* Logo */}
                     <div className="flex items-center">
                         <div className="flex items-center space-x-3">
                             <div className={`w-10 h-10 rounded-lg flex items-center justify-center border transition-all duration-300 ${isScrolled
@@ -42,7 +41,6 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Desktop Navigation */}
                     <div className="hidden md:block">
                         <div className="flex items-center space-x-8">
                             <a
@@ -93,7 +91,6 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    {/* Desktop CTA Buttons */}
                     <div className="hidden md:flex items-center space-x-4">
                         <button className={`font-body transition-all duration-300 ${isScrolled
                             ? 'text-foreground-muted hover:text-primary'
@@ -109,7 +106,6 @@ export default function Navbar() {
                         </button>
                     </div>
 
-                    {/* Mobile Menu Button */}
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -129,7 +125,6 @@ export default function Navbar() {
                     </div>
                 </div>
 
-                {/* Mobile Menu */}
                 {isMenuOpen && (
                     <div className={`md:hidden border-t transition-all duration-300 ${isScrolled
                         ? 'border-neutral bg-white/95 backdrop-blur-sm'
@@ -187,7 +182,6 @@ export default function Navbar() {
                                 Pricing
                             </a>
 
-                            {/* Mobile CTA Buttons */}
                             <div className="pt-4 space-y-2">
                                 <button className={`w-full px-4 py-2 font-body transition-all duration-300 text-left ${isScrolled
                                     ? 'text-foreground-muted hover:text-primary'

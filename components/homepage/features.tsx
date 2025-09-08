@@ -2,7 +2,6 @@ export default function Features() {
     return (
         <section className="py-20 bg-neutral">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Header */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
                         <span className="text-accent font-medium text-sm">
@@ -22,10 +21,8 @@ export default function Features() {
                     </p>
                 </div>
 
-                {/* Bento Grid Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 mb-16">
 
-                    {/* Large Feature - Commission Transparency (spans 6 cols) */}
                     <div className="md:col-span-6 lg:col-span-6 bg-background rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl"></div>
                         <div className="relative z-10">
@@ -71,7 +68,6 @@ export default function Features() {
                         </div>
                     </div>
 
-                    {/* Medium Feature - M-Pesa Integration (spans 3 cols) */}
                     <div className="md:col-span-3 lg:col-span-3 bg-background rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
                         <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/10 rounded-full blur-2xl"></div>
                         <div className="relative z-10">
@@ -94,7 +90,6 @@ export default function Features() {
                         </div>
                     </div>
 
-                    {/* Medium Feature - Analytics (spans 3 cols) */}
                     <div className="md:col-span-3 lg:col-span-3 bg-background rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
                         <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
                         <div className="relative z-10">
@@ -110,7 +105,6 @@ export default function Features() {
                                 Transform data into insights. Track sales, peak hours, and staff performance.
                             </p>
 
-                            {/* Mini Chart */}
                             <div className="flex items-end space-x-1 h-12 mb-4">
                                 <div className="bg-accent/30 w-2 h-6 rounded-t"></div>
                                 <div className="bg-accent/50 w-2 h-8 rounded-t"></div>
@@ -121,7 +115,6 @@ export default function Features() {
                         </div>
                     </div>
 
-                    {/* Wide Feature - Loyalty System (spans 8 cols) */}
                     <div className="md:col-span-6 lg:col-span-8 bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden border border-accent/10">
                         <div className="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-full blur-3xl"></div>
                         <div className="relative z-10">
@@ -141,7 +134,6 @@ export default function Features() {
                                     </p>
                                 </div>
 
-                                {/* Loyalty Card Mockup */}
                                 <div className="hidden lg:block bg-white rounded-2xl p-4 shadow-lg border border-accent/10 min-w-[200px]">
                                     <div className="flex items-center justify-between mb-3">
                                         <span className="text-xs text-foreground-muted">Customer</span>
@@ -183,7 +175,6 @@ export default function Features() {
                         </div>
                     </div>
 
-                    {/* Tall Feature - Staff Management (spans 4 cols, 2 rows) */}
                     <div className="md:col-span-3 lg:col-span-4 md:row-span-2 bg-background rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-32 h-32 bg-secondary/5 rounded-full blur-3xl"></div>
                         <div className="relative z-10 h-full flex flex-col">
@@ -199,7 +190,6 @@ export default function Features() {
                                 Empower your team with individual dashboards, performance tracking, and transparent earnings.
                             </p>
 
-                            {/* Staff Cards */}
                             <div className="space-y-3 mb-6 flex-1">
                                 <div className="bg-neutral rounded-lg p-3 flex items-center space-x-3">
                                     <div className="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
@@ -253,7 +243,6 @@ export default function Features() {
                         </div>
                     </div>
 
-                    {/* Small Feature - Quick Setup (spans 4 cols) */}
                     <div className="md:col-span-3 lg:col-span-4 bg-gradient-to-br from-secondary/10 to-accent/5 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-secondary/10">
                         <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                             <span className="text-xl">⚡</span>
@@ -279,7 +268,6 @@ export default function Features() {
                         </div>
                     </div>
 
-                    {/* Small Feature - 24/7 Support (spans 4 cols) */}
                     <div className="md:col-span-3 lg:col-span-4 bg-gradient-to-br from-accent/10 to-primary/5 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-accent/10">
                         <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                             <span className="text-xl">📞</span>
@@ -300,7 +288,6 @@ export default function Features() {
                     </div>
                 </div>
 
-                {/* Bottom CTA Section */}
                 <div className="bg-primary rounded-3xl p-8 md:p-12 text-center">
                     <h3 className="font-headings text-2xl md:text-3xl font-bold text-white mb-4">
                         Ready to Transform Your Barbershop?
@@ -321,7 +308,6 @@ export default function Features() {
                         </button>
                     </div>
 
-                    {/* Trust Indicators */}
                     <div className="flex items-center justify-center space-x-8 mt-8 pt-8 border-t border-white/20">
                         <div className="text-center">
                             <div className="text-2xl font-bold text-secondary">3 mins</div>

@@ -2,7 +2,6 @@ export default function Pricing() {
     return (
         <section className="py-20 bg-background">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Header */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
                         <span className="text-secondary font-medium text-sm">
@@ -20,7 +19,6 @@ export default function Pricing() {
                         and upgrade as your business grows. All plans include 24/7 support and free updates.
                     </p>
 
-                    {/* Billing Toggle */}
                     <div className="flex items-center justify-center space-x-4">
                         <span className="font-body text-foreground-muted">Monthly</span>
                         <div className="relative">
@@ -33,10 +31,8 @@ export default function Pricing() {
                     </div>
                 </div>
 
-                {/* Pricing Cards */}
                 <div className="grid md:grid-cols-3 gap-8 mb-16">
 
-                    {/* Basic Plan */}
                     <div className="bg-neutral rounded-3xl p-8 hover:shadow-lg transition-shadow">
                         <div className="text-center mb-8">
                             <h3 className="font-headings text-2xl font-bold text-primary mb-2">Basic</h3>
@@ -52,7 +48,6 @@ export default function Pricing() {
                             </button>
                         </div>
 
-                        {/* Features */}
                         <div className="space-y-4">
                             <div className="flex items-center">
                                 <span className="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
@@ -104,7 +99,6 @@ export default function Pricing() {
                             </div>
                         </div>
 
-                        {/* Best For */}
                         <div className="mt-6 pt-6 border-t border-neutral">
                             <p className="text-sm text-foreground-muted">
                                 <strong className="text-primary">Best for:</strong> 1-5 staff barbershops,
@@ -113,9 +107,8 @@ export default function Pricing() {
                         </div>
                     </div>
 
-                    {/* Pro Plan - Most Popular */}
                     <div className="bg-background rounded-3xl p-8 shadow-xl border-2 border-secondary relative hover:shadow-2xl transition-shadow">
-                        {/* Popular Badge */}
+                        
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                             <span className="bg-secondary text-primary px-4 py-2 rounded-full text-sm font-semibold">
                                 🔥 Most Popular
@@ -136,7 +129,6 @@ export default function Pricing() {
                             </button>
                         </div>
 
-                        {/* Features */}
                         <div className="space-y-4">
                             <div className="flex items-center">
                                 <span className="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
@@ -195,7 +187,6 @@ export default function Pricing() {
                             </div>
                         </div>
 
-                        {/* Best For */}
                         <div className="mt-6 pt-6 border-t border-neutral">
                             <p className="text-sm text-foreground-muted">
                                 <strong className="text-secondary">Best for:</strong> 6-15 staff barbershops,
@@ -204,7 +195,6 @@ export default function Pricing() {
                         </div>
                     </div>
 
-                    {/* Enterprise Plan */}
                     <div className="bg-neutral rounded-3xl p-8 hover:shadow-lg transition-shadow">
                         <div className="text-center mb-8">
                             <h3 className="font-headings text-2xl font-bold text-primary mb-2">Enterprise</h3>
@@ -220,7 +210,6 @@ export default function Pricing() {
                             </button>
                         </div>
 
-                        {/* Features */}
                         <div className="space-y-4">
                             <div className="flex items-center">
                                 <span className="w-5 h-5 bg-accent/20 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
@@ -279,7 +268,6 @@ export default function Pricing() {
                             </div>
                         </div>
 
-                        {/* Best For */}
                         <div className="mt-6 pt-6 border-t border-neutral">
                             <p className="text-sm text-foreground-muted">
                                 <strong className="text-primary">Best for:</strong> Large barbershops,
@@ -289,7 +277,6 @@ export default function Pricing() {
                     </div>
                 </div>
 
-                {/* Value Props Section */}
                 <div className="grid md:grid-cols-3 gap-8 mb-16">
                     <div className="text-center">
                         <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -322,7 +309,6 @@ export default function Pricing() {
                     </div>
                 </div>
 
-                {/* FAQ Section */}
                 <div className="bg-neutral rounded-3xl p-8 md:p-12">
                     <h3 className="font-headings text-2xl font-bold text-primary text-center mb-8">
                         Frequently Asked Questions
@@ -371,7 +357,6 @@ export default function Pricing() {
                     </div>
                 </div>
 
-                {/* Final CTA */}
                 <div className="text-center mt-16">
                     <h3 className="font-headings text-2xl md:text-3xl font-bold text-primary mb-4">
                         Ready to Transform Your Barbershop?

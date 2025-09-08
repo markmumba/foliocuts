@@ -4,7 +4,6 @@ export default function Testimonials() {
     return (
         <section className="py-20 bg-neutral overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Header */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
                         <span className="text-accent font-medium text-sm">
@@ -23,7 +22,6 @@ export default function Testimonials() {
                     </p>
                 </div>
 
-                {/* Stats Bar */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
                     <div className="text-center">
                         <div className="text-3xl md:text-4xl font-bold text-accent mb-2">50+</div>
@@ -43,14 +41,10 @@ export default function Testimonials() {
                     </div>
                 </div>
 
-                {/* Testimonials Carousel */}
                 <div className="relative mb-16">
 
-                    {/* Row 1 - Moving Left to Right */}
                     <div className="flex space-x-6 animate-scroll-right hover:animation-pause mb-8">
-                        {/* First set of testimonials */}
                         <div className="flex space-x-6 min-w-max">
-                            {/* Testimonial 1 - Commission Transparency */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
@@ -75,7 +69,6 @@ export default function Testimonials() {
                                 </div>
                             </div>
 
-                            {/* Testimonial 2 - M-Pesa Integration */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mr-4">
@@ -100,7 +93,6 @@ export default function Testimonials() {
                                 </div>
                             </div>
 
-                            {/* Testimonial 3 - Customer Loyalty */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
@@ -126,9 +118,7 @@ export default function Testimonials() {
                             </div>
                         </div>
 
-                        {/* Duplicate set for seamless loop */}
                         <div className="flex space-x-6 min-w-max">
-                            {/* Duplicate Testimonial 1 */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
@@ -153,7 +143,6 @@ export default function Testimonials() {
                                 </div>
                             </div>
 
-                            {/* Duplicate Testimonial 2 */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mr-4">
@@ -178,7 +167,6 @@ export default function Testimonials() {
                                 </div>
                             </div>
 
-                            {/* Duplicate Testimonial 3 */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
@@ -205,11 +193,8 @@ export default function Testimonials() {
                         </div>
                     </div>
 
-                    {/* Row 2 - Moving Right to Left */}
                     <div className="flex space-x-6 animate-scroll-left hover:animation-pause">
-                        {/* First set of testimonials */}
                         <div className="flex space-x-6 min-w-max">
-                            {/* Testimonial 4 - Analytics & Growth */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
@@ -234,7 +219,6 @@ export default function Testimonials() {
                                 </div>
                             </div>
 
-                            {/* Testimonial 5 - Ease of Use */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mr-4">
@@ -259,7 +243,6 @@ export default function Testimonials() {
                                 </div>
                             </div>
 
-                            {/* Testimonial 6 - ROI Focus */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
@@ -285,9 +268,7 @@ export default function Testimonials() {
                             </div>
                         </div>
 
-                        {/* Duplicate set for seamless loop */}
                         <div className="flex space-x-6 min-w-max">
-                            {/* Duplicate Testimonial 4 */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
@@ -312,7 +293,6 @@ export default function Testimonials() {
                                 </div>
                             </div>
 
-                            {/* Duplicate Testimonial 5 */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mr-4">
@@ -337,7 +317,6 @@ export default function Testimonials() {
                                 </div>
                             </div>
 
-                            {/* Duplicate Testimonial 6 */}
                             <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
                                 <div className="flex items-center mb-6">
                                     <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
@@ -365,7 +344,6 @@ export default function Testimonials() {
                     </div>
                 </div>
 
-                {/* Bottom CTA Section */}
                 <div className="text-center">
                     <div className="bg-gradient-to-r from-primary to-accent rounded-3xl p-8 md:p-12 text-white">
                         <h3 className="font-headings text-2xl md:text-3xl font-bold mb-4">
@@ -388,7 +366,6 @@ export default function Testimonials() {
                             </div>
                         </div>
 
-                        {/* Trust Badges */}
                         <div className="flex items-center justify-center space-x-8 mt-8 pt-8 border-t border-white/20">
                             <div className="flex items-center text-white/80">
                                 <span className="mr-2">🚀</span>
