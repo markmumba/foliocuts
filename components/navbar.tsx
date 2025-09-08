@@ -55,7 +55,7 @@ export default function Navbar() {
                                 For Barbers
                             </a>
                             <a
-                                href="#pricing"
+                                href="#features"
                                 className={`font-body transition-all duration-300 cursor-pointer ${isScrolled
                                     ? 'text-foreground-muted hover:text-primary'
                                     : 'text-white/80 hover:text-white hover:drop-shadow-sm'
@@ -147,7 +147,7 @@ export default function Navbar() {
                                 For Barbers
                             </a>
                             <a
-                                href="#pricing"
+                                href="#features"
                                 className={`block px-3 py-2 font-body rounded-lg transition-all duration-300 ${isScrolled
                                     ? 'text-foreground-muted hover:text-primary hover:bg-neutral'
                                     : 'text-white/80 hover:text-white hover:bg-white/20 backdrop-blur-sm'
