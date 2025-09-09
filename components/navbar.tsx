@@ -18,25 +18,20 @@ export default function Navbar() {
 
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? 'bg-white/95  border-neutral '
-            : 'bg-primary/10  border-white/20 '
+            ? 'bg-white/95 backdrop-blur-sm border-b border-neutral shadow-sm'
+            : 'bg-white/90 backdrop-blur-sm border-b border-neutral/20 shadow-sm'
             }`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
 
                     <div className="flex items-center">
                         <div className="flex items-center space-x-3">
-                            <div className={`w-10 h-10 rounded-lg flex items-center justify-center border transition-all duration-300 ${isScrolled
-                                ? 'bg-secondary border-secondary/20'
-                                : 'bg-secondary/20 backdrop-blur-sm border-white/20'
-                                }`}>
-                                <span className="text-secondary font-bold text-xl">💈</span>
+                            <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center border border-secondary/20">
+                                <span className="text-primary font-bold text-xl">💈</span>
                             </div>
                             <div>
-                                <h1 className={`font-headings text-xl font-bold transition-all duration-300 ${isScrolled ? 'text-primary' : 'text-white drop-shadow-sm'
-                                    }`}>FolioCuts</h1>
-                                <p className={`text-xs transition-all duration-300 ${isScrolled ? 'text-foreground-muted' : 'text-white/70'
-                                    }`}>Digital Barbershop Platform</p>
+                                <h1 className="font-headings text-xl font-bold text-primary">FolioCuts</h1>
+                                <p className="text-xs text-foreground-muted">Digital Barbershop Platform</p>
                             </div>
                         </div>
                     </div>
@@ -45,46 +40,31 @@ export default function Navbar() {
                         <div className="flex items-center space-x-8">
                             <a
                                 href="#features"
-                                className={`font-body transition-all duration-300 cursor-pointer ${isScrolled
-                                    ? 'text-foreground-muted hover:text-primary'
-                                    : 'text-white/80 hover:text-white hover:drop-shadow-sm'
-                                    }`}
+                                className="font-body text-foreground-muted hover:text-primary transition-all duration-300 cursor-pointer"
                             >
                                 For Barbers
                             </a>
                             <a
-                                href="#pricing"
-                                className={`font-body transition-all duration-300 cursor-pointer ${isScrolled
-                                    ? 'text-foreground-muted hover:text-primary'
-                                    : 'text-white/80 hover:text-white hover:drop-shadow-sm'
-                                    }`}
+                                href="#features"
+                                className="font-body text-foreground-muted hover:text-primary transition-all duration-300 cursor-pointer"
                             >
                                 For Shop Owners
                             </a>
                             <a
                                 href="#how-it-works"
-                                className={`font-body transition-all duration-300 cursor-pointer ${isScrolled
-                                    ? 'text-foreground-muted hover:text-primary'
-                                    : 'text-white/80 hover:text-white hover:drop-shadow-sm'
-                                    }`}
+                                className="font-body text-foreground-muted hover:text-primary transition-all duration-300 cursor-pointer"
                             >
                                 How It Works
                             </a>
                             <a
                                 href="#testimonials"
-                                className={`font-body transition-all duration-300 cursor-pointer ${isScrolled
-                                    ? 'text-foreground-muted hover:text-primary'
-                                    : 'text-white/80 hover:text-white hover:drop-shadow-sm'
-                                    }`}
+                                className="font-body text-foreground-muted hover:text-primary transition-all duration-300 cursor-pointer"
                             >
                                 Success Stories
                             </a>
                             <a
                                 href="#pricing"
-                                className={`font-body transition-all duration-300 cursor-pointer ${isScrolled
-                                    ? 'text-foreground-muted hover:text-primary'
-                                    : 'text-white/80 hover:text-white hover:drop-shadow-sm'
-                                    }`}
+                                className="font-body text-foreground-muted hover:text-primary transition-all duration-300 cursor-pointer"
                             >
                                 Pricing
                             </a>
@@ -92,16 +72,10 @@ export default function Navbar() {
                     </div>
 
                     <div className="hidden md:flex items-center space-x-4">
-                        <button className={`font-body transition-all duration-300 ${isScrolled
-                            ? 'text-foreground-muted hover:text-primary'
-                            : 'text-white/80 hover:text-white hover:drop-shadow-sm'
-                            }`}>
+                        <button className="font-body text-foreground-muted hover:text-primary transition-all duration-300">
                             Log In
                         </button>
-                        <button className={`px-6 py-2 font-semibold rounded-full transition-all duration-300 border shadow-lg hover:shadow-xl ${isScrolled
-                            ? 'bg-primary text-white hover:bg-primary-light border-primary'
-                            : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border-white/20'
-                            }`}>
+                        <button className="px-6 py-2 bg-secondary text-primary font-semibold rounded-full hover:bg-secondary-light transition-all duration-300 border border-secondary shadow-lg hover:shadow-xl">
                             Get Started
                         </button>
                     </div>
@@ -109,10 +83,7 @@ export default function Navbar() {
                     <div className="md:hidden">
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className={`p-2 rounded-lg transition-all duration-300 border ${isScrolled
-                                ? 'text-foreground-muted hover:text-primary hover:bg-neutral border-neutral'
-                                : 'text-white/80 hover:text-white hover:bg-white/20 backdrop-blur-sm border-white/20'
-                                }`}
+                            className="p-2 rounded-lg text-foreground-muted hover:text-primary hover:bg-neutral transition-all duration-300 border border-neutral"
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 {isMenuOpen ? (
@@ -126,73 +97,49 @@ export default function Navbar() {
                 </div>
 
                 {isMenuOpen && (
-                    <div className={`md:hidden border-t transition-all duration-300 ${isScrolled
-                        ? 'border-neutral bg-white/95 backdrop-blur-sm'
-                        : 'border-white/20 bg-white/10 backdrop-blur-md'
-                        }`}>
+                    <div className="md:hidden border-t border-neutral bg-white/95 backdrop-blur-sm">
                         <div className="px-2 pt-2 pb-3 space-y-1">
                             <a
                                 href="#features"
-                                className={`block px-3 py-2 font-body rounded-lg transition-all duration-300 ${isScrolled
-                                    ? 'text-foreground-muted hover:text-primary hover:bg-neutral'
-                                    : 'text-white/80 hover:text-white hover:bg-white/20 backdrop-blur-sm'
-                                    }`}
+                                className="block px-3 py-2 font-body text-foreground-muted hover:text-primary hover:bg-neutral rounded-lg transition-all duration-300"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 For Barbers
                             </a>
                             <a
-                                href="#pricing"
-                                className={`block px-3 py-2 font-body rounded-lg transition-all duration-300 ${isScrolled
-                                    ? 'text-foreground-muted hover:text-primary hover:bg-neutral'
-                                    : 'text-white/80 hover:text-white hover:bg-white/20 backdrop-blur-sm'
-                                    }`}
+                                href="#features"
+                                className="block px-3 py-2 font-body text-foreground-muted hover:text-primary hover:bg-neutral rounded-lg transition-all duration-300"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 For Shop Owners
                             </a>
                             <a
                                 href="#how-it-works"
-                                className={`block px-3 py-2 font-body rounded-lg transition-all duration-300 ${isScrolled
-                                    ? 'text-foreground-muted hover:text-primary hover:bg-neutral'
-                                    : 'text-white/80 hover:text-white hover:bg-white/20 backdrop-blur-sm'
-                                    }`}
+                                className="block px-3 py-2 font-body text-foreground-muted hover:text-primary hover:bg-neutral rounded-lg transition-all duration-300"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 How It Works
                             </a>
                             <a
                                 href="#testimonials"
-                                className={`block px-3 py-2 font-body rounded-lg transition-all duration-300 ${isScrolled
-                                    ? 'text-foreground-muted hover:text-primary hover:bg-neutral'
-                                    : 'text-white/80 hover:text-white hover:bg-white/20 backdrop-blur-sm'
-                                    }`}
+                                className="block px-3 py-2 font-body text-foreground-muted hover:text-primary hover:bg-neutral rounded-lg transition-all duration-300"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Success Stories
                             </a>
                             <a
                                 href="#pricing"
-                                className={`block px-3 py-2 font-body rounded-lg transition-all duration-300 ${isScrolled
-                                    ? 'text-foreground-muted hover:text-primary hover:bg-neutral'
-                                    : 'text-white/80 hover:text-white hover:bg-white/20 backdrop-blur-sm'
-                                    }`}
+                                className="block px-3 py-2 font-body text-foreground-muted hover:text-primary hover:bg-neutral rounded-lg transition-all duration-300"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Pricing
                             </a>
 
                             <div className="pt-4 space-y-2">
-                                <button className={`w-full px-4 py-2 font-body transition-all duration-300 text-left ${isScrolled
-                                    ? 'text-foreground-muted hover:text-primary'
-                                    : 'text-white/80 hover:text-white'
-                                    }`}>
+                                <button className="w-full px-4 py-2 font-body text-foreground-muted hover:text-primary transition-all duration-300 text-left">
                                     Log In
                                 </button>
-                                <button className={`w-full px-4 py-2 font-semibold rounded-full transition-all duration-300 border shadow-lg ${isScrolled
-                                    ? 'bg-primary text-white hover:bg-primary-light border-primary'
-                                    : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border-white/20'
-                                    }`}>
+                                <button className="w-full px-4 py-2 bg-secondary text-primary font-semibold rounded-full hover:bg-secondary-light transition-all duration-300 border border-secondary shadow-lg">
                                     Get Started
                                 </button>
                             </div>

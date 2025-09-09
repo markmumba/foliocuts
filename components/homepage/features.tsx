@@ -1,6 +1,6 @@
 export default function Features() {
     return (
-        <section className="py-20 bg-neutral">
+        <section id="features" className="pt-40 pb-20 bg-neutral relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
