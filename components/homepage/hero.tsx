@@ -46,32 +46,33 @@ export default function Hero() {
 
                 <div className="text-center space-y-16">
 
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-                        <span className="text-secondary text-xs mr-2">🇰🇪</span>
-                        <span className="text-foreground-muted text-xs font-medium">
+                    <div className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-accent/15 to-secondary/15 border border-accent/30 shadow-lg backdrop-blur-sm">
+                        <span className="text-secondary text-sm mr-2">🇰🇪</span>
+                        <span className="text-foreground text-sm font-semibold">
                             Built for
                         </span>
-                        <span className="text-accent text-xs font-semibold ml-1">
+                        <span className="text-accent text-sm font-bold ml-1">
                             Kenyan Barbershops
                         </span>
                     </div>
 
-                    <div className="space-y-4 max-w-4xl mx-auto">
-                        <h1 className="font-headings text-5xl md:text-6xl lg:text-7xl font-black text-foreground leading-[1.1] tracking-tight">
-                            <span className="inline-flex items-center">
-                                Stop Manual
-                                <span className="inline-flex items-center mx-3">
-                                    <span className="text-4xl md:text-5xl lg:text-6xl">📝</span>
+                    <div className="space-y-6 max-w-5xl mx-auto">
+                        <h1 className="font-headings text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tight">
+                            <span className="inline-flex items-center flex-wrap justify-center">
+                                <span className="text-primary">Stop</span>
+                                <span className="text-error mx-2 md:mx-4">Manual</span>
+                                <span className="inline-flex items-center mx-2 md:mx-3">
+                                    <span className="text-5xl md:text-6xl lg:text-7xl">📝</span>
                                 </span>
-                                Start
+                                <span className="text-primary">Start</span>
                             </span>
                             <br />
-                            <span className="inline-flex items-center">
-                                Digital
-                                <span className="inline-flex items-center mx-3">
-                                    <span className="text-4xl md:text-5xl lg:text-6xl">💈</span>
+                            <span className="inline-flex items-center flex-wrap justify-center">
+                                <span className="text-accent">Digital</span>
+                                <span className="inline-flex items-center mx-2 md:mx-3">
+                                    <span className="text-5xl md:text-6xl lg:text-7xl">💈</span>
                                 </span>
-                                <span className="italic font-light">Today</span>
+                                <span className="text-secondary italic font-light">Today</span>
                             </span>
                         </h1>
                     </div>
@@ -81,13 +82,13 @@ export default function Hero() {
                         and invisible loyalty programs that keep customers coming back.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <button className="px-8 py-4 bg-secondary text-primary font-bold text-base rounded-full hover:bg-secondary-light transition-all duration-300 flex items-center space-x-2 shadow-lg">
+                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <button className="px-10 py-5 bg-secondary text-primary font-bold text-lg rounded-full hover:bg-secondary-light transition-all duration-300 flex items-center space-x-3 shadow-xl hover:shadow-2xl transform hover:scale-105">
                             <span>Start Free Trial</span>
-                            <span className="text-lg">→</span>
+                            <span className="text-xl">→</span>
                         </button>
 
-                        <button className="px-8 py-4 border-2 border-primary text-primary font-semibold text-base rounded-full hover:bg-primary hover:text-white transition-all duration-300">
+                        <button className="px-10 py-5 border-2 border-primary text-primary font-semibold text-lg rounded-full hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                             Watch Demo
                         </button>
                     </div>

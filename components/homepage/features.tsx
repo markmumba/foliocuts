@@ -21,269 +21,207 @@ export default function Features() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-12 gap-6 mb-16">
+                {/* Primary Features - Clear 3-column layout */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
 
-                    <div className="md:col-span-6 lg:col-span-6 bg-background rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl"></div>
-                        <div className="relative z-10">
-                            <div className="w-16 h-16 bg-secondary/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <span className="text-3xl">💰</span>
-                            </div>
-
-                            <h3 className="font-headings text-2xl font-bold text-primary mb-4">
-                                Commission Transparency
-                            </h3>
-
-                            <p className="font-body text-foreground-muted leading-relaxed mb-6">
-                                Automated commission calculation per staff member. Real-time tracking,
-                                daily reports, and transparent payouts that build trust with your team.
-                            </p>
-
-                            {/* Mini Stats */}
-                            <div className="grid grid-cols-2 gap-4 mb-6">
-                                <div className="bg-secondary/5 rounded-xl p-3">
-                                    <div className="text-lg font-bold text-secondary">40%</div>
-                                    <div className="text-xs text-foreground-muted">Staff Satisfaction</div>
-                                </div>
-                                <div className="bg-accent/5 rounded-xl p-3">
-                                    <div className="text-lg font-bold text-accent">Zero</div>
-                                    <div className="text-xs text-foreground-muted">Disputes</div>
-                                </div>
-                            </div>
-
-                            <ul className="space-y-2 text-sm">
-                                <li className="flex items-center text-foreground-muted">
-                                    <span className="w-4 h-4 bg-accent/20 rounded-full flex items-center justify-center mr-3">
-                                        <span className="text-accent text-xs">✓</span>
-                                    </span>
-                                    Real-time commission tracking
-                                </li>
-                                <li className="flex items-center text-foreground-muted">
-                                    <span className="w-4 h-4 bg-accent/20 rounded-full flex items-center justify-center mr-3">
-                                        <span className="text-accent text-xs">✓</span>
-                                    </span>
-                                    Staff performance dashboards
-                                </li>
-                            </ul>
+                    {/* Feature 1: Commission Transparency */}
+                    <div className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-neutral/20">
+                        <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
+                            <span className="text-3xl">💰</span>
                         </div>
-                    </div>
 
-                    <div className="md:col-span-3 lg:col-span-3 bg-background rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
-                        <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/10 rounded-full blur-2xl"></div>
-                        <div className="relative z-10">
-                            <div className="w-14 h-14 bg-accent/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <span className="text-2xl">📱</span>
+                        <h3 className="font-headings text-2xl font-bold text-primary mb-4">
+                            Commission Transparency
+                        </h3>
+
+                        <p className="font-body text-foreground-muted leading-relaxed mb-6">
+                            Automated commission calculation per staff member. Real-time tracking and transparent payouts that build trust with your team.
+                        </p>
+
+                        <div className="space-y-3">
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
+                                </div>
+                                <span className="text-foreground-muted">Real-time commission tracking</span>
                             </div>
-
-                            <h3 className="font-headings text-lg font-bold text-primary mb-3">
-                                M-Pesa Integration
-                            </h3>
-
-                            <p className="font-body text-sm text-foreground-muted leading-relaxed mb-4">
-                                Seamless mobile money payments with STK Push. Modern payment options your customers expect.
-                            </p>
-
-                            <div className="bg-accent/5 rounded-xl p-3 mb-4">
-                                <div className="text-xl font-bold text-accent">85%</div>
-                                <div className="text-xs text-foreground-muted">Cashless Payments</div>
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
+                                </div>
+                                <span className="text-foreground-muted">Daily & weekly reports</span>
+                            </div>
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
+                                </div>
+                                <span className="text-foreground-muted">Zero payment disputes</span>
                             </div>
                         </div>
                     </div>
 
-                    <div className="md:col-span-3 lg:col-span-3 bg-background rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
-                        <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
-                        <div className="relative z-10">
-                            <div className="w-14 h-14 bg-primary/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <span className="text-2xl">📊</span>
+                    {/* Feature 2: M-Pesa Integration */}
+                    <div className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-neutral/20">
+                        <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-6">
+                            <span className="text-3xl">📱</span>
+                        </div>
+
+                        <h3 className="font-headings text-2xl font-bold text-primary mb-4">
+                            M-Pesa Integration
+                        </h3>
+
+                        <p className="font-body text-foreground-muted leading-relaxed mb-6">
+                            Seamless mobile money payments with STK Push. Accept the payment methods your customers prefer.
+                        </p>
+
+                        <div className="space-y-3">
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
+                                </div>
+                                <span className="text-foreground-muted">Instant STK Push payments</span>
                             </div>
-
-                            <h3 className="font-headings text-lg font-bold text-primary mb-3">
-                                Real-time Analytics
-                            </h3>
-
-                            <p className="font-body text-sm text-foreground-muted leading-relaxed mb-4">
-                                Transform data into insights. Track sales, peak hours, and staff performance.
-                            </p>
-
-                            <div className="flex items-end space-x-1 h-12 mb-4">
-                                <div className="bg-accent/30 w-2 h-6 rounded-t"></div>
-                                <div className="bg-accent/50 w-2 h-8 rounded-t"></div>
-                                <div className="bg-accent w-2 h-12 rounded-t"></div>
-                                <div className="bg-accent/70 w-2 h-10 rounded-t"></div>
-                                <div className="bg-accent/40 w-2 h-7 rounded-t"></div>
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
+                                </div>
+                                <span className="text-foreground-muted">Automatic receipt generation</span>
+                            </div>
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
+                                </div>
+                                <span className="text-foreground-muted">85% cashless transactions</span>
                             </div>
                         </div>
                     </div>
 
-                    <div className="md:col-span-6 lg:col-span-8 bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden border border-accent/10">
-                        <div className="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-full blur-3xl"></div>
-                        <div className="relative z-10">
-                            <div className="flex items-start justify-between mb-6">
-                                <div>
-                                    <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                        <span className="text-3xl">🎯</span>
-                                    </div>
+                    {/* Feature 3: Invisible Loyalty */}
+                    <div className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-neutral/20">
+                        <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                            <span className="text-3xl">🎯</span>
+                        </div>
 
-                                    <h3 className="font-headings text-2xl font-bold text-primary mb-4">
-                                        Invisible Loyalty System
-                                    </h3>
+                        <h3 className="font-headings text-2xl font-bold text-primary mb-4">
+                            Invisible Loyalty System
+                        </h3>
 
-                                    <p className="font-body text-foreground-muted leading-relaxed mb-6 max-w-lg">
-                                        Customers get rewarded without apps to download or cards to carry.
-                                        Just their phone number unlocks automatic loyalty tracking.
-                                    </p>
+                        <p className="font-body text-foreground-muted leading-relaxed mb-6">
+                            Customers get rewarded automatically using just their phone number. No apps to download or cards to carry.
+                        </p>
+
+                        <div className="space-y-3">
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
                                 </div>
-
-                                <div className="hidden lg:block bg-white rounded-2xl p-4 shadow-lg border border-accent/10 min-w-[200px]">
-                                    <div className="flex items-center justify-between mb-3">
-                                        <span className="text-xs text-foreground-muted">Customer</span>
-                                        <div className="w-6 h-6 bg-accent rounded-full flex items-center justify-center">
-                                            <span className="text-white text-xs">💈</span>
-                                        </div>
-                                    </div>
-                                    <div className="text-sm font-semibold text-primary mb-2">John Doe</div>
-                                    <div className="text-xs text-foreground-muted mb-3">0722 123 456</div>
-
-                                    <div className="bg-neutral rounded-lg p-2 mb-3">
-                                        <div className="flex justify-between text-xs">
-                                            <span className="text-foreground-muted">Progress</span>
-                                            <span className="text-accent font-medium">7/10</span>
-                                        </div>
-                                        <div className="mt-1 h-2 bg-accent/20 rounded-full overflow-hidden">
-                                            <div className="h-full bg-accent rounded-full" style={{ width: '70%' }}></div>
-                                        </div>
-                                    </div>
-
-                                    <div className="text-xs text-accent font-medium">3 more visits = Free haircut!</div>
-                                </div>
+                                <span className="text-foreground-muted">Phone number based tracking</span>
                             </div>
-
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div className="bg-white/50 rounded-xl p-4">
-                                    <div className="text-lg font-bold text-accent">35%</div>
-                                    <div className="text-xs text-foreground-muted">Retention Increase</div>
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
                                 </div>
-                                <div className="bg-white/50 rounded-xl p-4">
-                                    <div className="text-lg font-bold text-secondary">Zero</div>
-                                    <div className="text-xs text-foreground-muted">Lost Cards</div>
+                                <span className="text-foreground-muted">Automatic reward calculation</span>
+                            </div>
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
                                 </div>
-                                <div className="bg-white/50 rounded-xl p-4">
-                                    <div className="text-lg font-bold text-primary">100%</div>
-                                    <div className="text-xs text-foreground-muted">Automatic</div>
-                                </div>
+                                <span className="text-foreground-muted">35% retention increase</span>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div className="md:col-span-3 lg:col-span-4 md:row-span-2 bg-background rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-32 h-32 bg-secondary/5 rounded-full blur-3xl"></div>
-                        <div className="relative z-10 h-full flex flex-col">
-                            <div className="w-14 h-14 bg-secondary/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                <span className="text-2xl">👥</span>
-                            </div>
+                {/* Secondary Features - 2-column layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
 
-                            <h3 className="font-headings text-xl font-bold text-primary mb-4">
-                                Staff Management
-                            </h3>
+                    {/* Staff Management */}
+                    <div className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-neutral/20">
+                        <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
+                            <span className="text-3xl">👥</span>
+                        </div>
 
-                            <p className="font-body text-sm text-foreground-muted leading-relaxed mb-6">
-                                Empower your team with individual dashboards, performance tracking, and transparent earnings.
-                            </p>
+                        <h3 className="font-headings text-2xl font-bold text-primary mb-4">
+                            Staff Management
+                        </h3>
 
-                            <div className="space-y-3 mb-6 flex-1">
-                                <div className="bg-neutral rounded-lg p-3 flex items-center space-x-3">
-                                    <div className="w-8 h-8 bg-accent/20 rounded-full flex items-center justify-center">
-                                        <span className="text-xs">👨</span>
+                        <p className="font-body text-foreground-muted leading-relaxed mb-6">
+                            Empower your team with individual dashboards, performance tracking, and transparent earnings reports.
+                        </p>
+
+                        <div className="bg-neutral/30 rounded-xl p-4 mb-6">
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center space-x-3">
+                                    <div className="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
+                                        <span className="text-sm">👨</span>
                                     </div>
-                                    <div className="flex-1">
-                                        <div className="text-sm font-medium text-primary">John K.</div>
+                                    <div>
+                                        <div className="text-sm font-semibold text-primary">John K.</div>
                                         <div className="text-xs text-foreground-muted">Master Barber</div>
                                     </div>
-                                    <div className="text-right">
-                                        <div className="text-sm font-bold text-accent">KES 12K</div>
-                                        <div className="text-xs text-foreground-muted">This week</div>
-                                    </div>
                                 </div>
-
-                                <div className="bg-neutral rounded-lg p-3 flex items-center space-x-3">
-                                    <div className="w-8 h-8 bg-secondary/20 rounded-full flex items-center justify-center">
-                                        <span className="text-xs">👩</span>
-                                    </div>
-                                    <div className="flex-1">
-                                        <div className="text-sm font-medium text-primary">Grace M.</div>
-                                        <div className="text-xs text-foreground-muted">Senior Stylist</div>
-                                    </div>
-                                    <div className="text-right">
-                                        <div className="text-sm font-bold text-secondary">KES 9.8K</div>
-                                        <div className="text-xs text-foreground-muted">This week</div>
-                                    </div>
+                                <div className="text-right">
+                                    <div className="text-lg font-bold text-accent">KES 12K</div>
+                                    <div className="text-xs text-foreground-muted">This week</div>
                                 </div>
                             </div>
-
-                            <ul className="space-y-2 text-xs">
-                                <li className="flex items-center text-foreground-muted">
-                                    <span className="w-3 h-3 bg-accent/20 rounded-full flex items-center justify-center mr-2">
-                                        <span className="text-accent text-[8px]">✓</span>
-                                    </span>
-                                    Individual performance dashboards
-                                </li>
-                                <li className="flex items-center text-foreground-muted">
-                                    <span className="w-3 h-3 bg-accent/20 rounded-full flex items-center justify-center mr-2">
-                                        <span className="text-accent text-[8px]">✓</span>
-                                    </span>
-                                    Commission transparency
-                                </li>
-                                <li className="flex items-center text-foreground-muted">
-                                    <span className="w-3 h-3 bg-accent/20 rounded-full flex items-center justify-center mr-2">
-                                        <span className="text-accent text-[8px]">✓</span>
-                                    </span>
-                                    Weekly/monthly reports
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div className="md:col-span-3 lg:col-span-4 bg-gradient-to-br from-secondary/10 to-accent/5 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-secondary/10">
-                        <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                            <span className="text-xl">⚡</span>
                         </div>
 
-                        <h3 className="font-headings text-lg font-bold text-primary mb-3">
-                            3-Minute Setup
-                        </h3>
-
-                        <p className="font-body text-sm text-foreground-muted leading-relaxed mb-4">
-                            Get started instantly. No technical skills required, no lengthy training sessions.
-                        </p>
-
-                        <div className="flex items-center space-x-4">
-                            <div className="text-center">
-                                <div className="text-xl font-bold text-secondary">3</div>
-                                <div className="text-xs text-foreground-muted">Minutes</div>
+                        <div className="space-y-3">
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
+                                </div>
+                                <span className="text-foreground-muted">Individual performance dashboards</span>
                             </div>
-                            <div className="text-center">
-                                <div className="text-xl font-bold text-accent">0</div>
-                                <div className="text-xs text-foreground-muted">Setup Fees</div>
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
+                                </div>
+                                <span className="text-foreground-muted">Weekly earnings reports</span>
                             </div>
                         </div>
                     </div>
 
-                    <div className="md:col-span-3 lg:col-span-4 bg-gradient-to-br from-accent/10 to-primary/5 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group border border-accent/10">
-                        <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                            <span className="text-xl">📞</span>
+                    {/* Analytics & Support */}
+                    <div className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-neutral/20">
+                        <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+                            <span className="text-3xl">📊</span>
                         </div>
 
-                        <h3 className="font-headings text-lg font-bold text-primary mb-3">
-                            24/7 Support
+                        <h3 className="font-headings text-2xl font-bold text-primary mb-4">
+                            Analytics & Support
                         </h3>
 
-                        <p className="font-body text-sm text-foreground-muted leading-relaxed mb-4">
-                            Local Kenyan support team ready to help. WhatsApp, phone, or email - we're here.
+                        <p className="font-body text-foreground-muted leading-relaxed mb-6">
+                            Real-time business insights with 24/7 local Kenyan support. Get help when you need it most.
                         </p>
 
-                        <div className="flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-                            <span className="text-xs text-accent font-medium">Support team online</span>
+                        <div className="grid grid-cols-2 gap-4 mb-6">
+                            <div className="bg-accent/5 rounded-xl p-4 text-center">
+                                <div className="text-2xl font-bold text-accent">3min</div>
+                                <div className="text-xs text-foreground-muted">Setup Time</div>
+                            </div>
+                            <div className="bg-secondary/5 rounded-xl p-4 text-center">
+                                <div className="text-2xl font-bold text-secondary">24/7</div>
+                                <div className="text-xs text-foreground-muted">Support</div>
+                            </div>
+                        </div>
+
+                        <div className="space-y-3">
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
+                                </div>
+                                <span className="text-foreground-muted">Real-time sales analytics</span>
+                            </div>
+                            <div className="flex items-center text-sm">
+                                <div className="w-5 h-5 bg-accent/10 rounded-full flex items-center justify-center mr-3">
+                                    <span className="text-accent text-xs">✓</span>
+                                </div>
+                                <span className="text-foreground-muted">WhatsApp & phone support</span>
+                            </div>
                         </div>
                     </div>
                 </div>

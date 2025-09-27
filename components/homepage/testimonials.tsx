@@ -43,301 +43,307 @@ export default function Testimonials() {
 
                 <div className="relative mb-16">
 
-                    <div className="flex space-x-6 animate-scroll-right hover:animation-pause mb-8">
-                        <div className="flex space-x-6 min-w-max">
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-secondary text-xl">👨‍💼</span>
+                    {/* Row 1 - Moving Left to Right */}
+                    <div className="flex space-x-3 md:space-x-6 animate-scroll-right hover:animation-pause mb-6 md:mb-8">
+                        <div className="flex space-x-3 md:space-x-6 min-w-max">
+                            {/* Testimonial 1 */}
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-secondary text-sm md:text-xl">👨‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">James Mwangi</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Elite Cuts Nairobi</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">James Mwangi</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Elite Cuts Nairobi</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "My barbers used to complain about commission calculations. Now everything is transparent and automatic. <strong className="text-primary">Staff morale is up 40%</strong> and disputes are completely gone."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">8 months using FolioCuts</span>
-                                    <span className="text-foreground-muted">12 staff members</span>
+                                    <span className="text-foreground-muted">12 staff</span>
                                 </div>
                             </div>
 
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-accent text-xl">👩‍💼</span>
+                            {/* Testimonial 2 */}
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-accent/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-accent text-sm md:text-xl">👩‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">Grace Wanjiku</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Modern Cuts Mombasa</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">Grace Wanjiku</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Modern Cuts Mombasa</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "M-Pesa integration changed everything. <strong className="text-accent">85% of payments</strong> are now cashless. No more cash handling stress, no more end-of-day reconciliation headaches."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">6 months using FolioCuts</span>
-                                    <span className="text-foreground-muted">7 staff members</span>
+                                    <span className="text-foreground-muted">7 staff</span>
                                 </div>
                             </div>
 
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-primary text-xl">👨‍💼</span>
+                            {/* Testimonial 3 */}
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-primary/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-primary text-sm md:text-xl">👨‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">Samuel Kiprotich</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Fresh Fade Kisumu</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">Samuel Kiprotich</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Fresh Fade Kisumu</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "The invisible loyalty system is genius! Customers don't need apps or cards. <strong className="text-primary">Customer retention increased by 35%</strong> and they're genuinely surprised when they earn free services."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">1 year using FolioCuts</span>
-                                    <span className="text-foreground-muted">5 staff members</span>
+                                    <span className="text-foreground-muted">5 staff</span>
                                 </div>
                             </div>
-                        </div>
 
-                        <div className="flex space-x-6 min-w-max">
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-secondary text-xl">👨‍💼</span>
+                            {/* Duplicates for seamless loop */}
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-secondary text-sm md:text-xl">👨‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">James Mwangi</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Elite Cuts Nairobi</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">James Mwangi</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Elite Cuts Nairobi</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "My barbers used to complain about commission calculations. Now everything is transparent and automatic. <strong className="text-primary">Staff morale is up 40%</strong> and disputes are completely gone."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">8 months using FolioCuts</span>
-                                    <span className="text-foreground-muted">12 staff members</span>
+                                    <span className="text-foreground-muted">12 staff</span>
                                 </div>
                             </div>
 
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-accent text-xl">👩‍💼</span>
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-accent/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-accent text-sm md:text-xl">👩‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">Grace Wanjiku</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Modern Cuts Mombasa</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">Grace Wanjiku</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Modern Cuts Mombasa</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "M-Pesa integration changed everything. <strong className="text-accent">85% of payments</strong> are now cashless. No more cash handling stress, no more end-of-day reconciliation headaches."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">6 months using FolioCuts</span>
-                                    <span className="text-foreground-muted">7 staff members</span>
+                                    <span className="text-foreground-muted">7 staff</span>
                                 </div>
                             </div>
 
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-primary text-xl">👨‍💼</span>
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-primary/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-primary text-sm md:text-xl">👨‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">Samuel Kiprotich</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Fresh Fade Kisumu</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">Samuel Kiprotich</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Fresh Fade Kisumu</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "The invisible loyalty system is genius! Customers don't need apps or cards. <strong className="text-primary">Customer retention increased by 35%</strong> and they're genuinely surprised when they earn free services."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">1 year using FolioCuts</span>
-                                    <span className="text-foreground-muted">5 staff members</span>
+                                    <span className="text-foreground-muted">5 staff</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="flex space-x-6 animate-scroll-left hover:animation-pause">
-                        <div className="flex space-x-6 min-w-max">
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-secondary text-xl">👨‍💼</span>
+                    {/* Row 2 - Moving Right to Left */}
+                    <div className="flex space-x-3 md:space-x-6 animate-scroll-left hover:animation-pause">
+                        <div className="flex space-x-3 md:space-x-6 min-w-max">
+                            {/* Testimonial 4 */}
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-secondary text-sm md:text-xl">👨‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">David Ochieng</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Prestige Barbers Nairobi</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">David Ochieng</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Prestige Barbers Nairobi</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "I never knew my peak hours or which services were most profitable. Now I make data-driven decisions. <strong className="text-accent">Revenue is up 28%</strong> and I've optimized my staff scheduling perfectly."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">10 months using FolioCuts</span>
-                                    <span className="text-foreground-muted">15 staff members</span>
+                                    <span className="text-foreground-muted">15 staff</span>
                                 </div>
                             </div>
 
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-accent text-xl">👩‍💼</span>
+                            {/* Testimonial 5 */}
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-accent/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-accent text-sm md:text-xl">👩‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">Mary Njeri</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Style Studio Nakuru</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">Mary Njeri</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Style Studio Nakuru</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "I was worried about learning new technology, but setup took literally <strong className="text-secondary">3 minutes</strong>. My staff picked it up immediately. It's so intuitive, even my oldest barber loves using it."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">4 months using FolioCuts</span>
-                                    <span className="text-foreground-muted">9 staff members</span>
+                                    <span className="text-foreground-muted">9 staff</span>
                                 </div>
                             </div>
 
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-primary text-xl">👨‍💼</span>
+                            {/* Testimonial 6 */}
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-primary/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-primary text-sm md:text-xl">👨‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">Peter Kamau</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Sharp Cuts Eldoret</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">Peter Kamau</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Sharp Cuts Eldoret</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "FolioCuts paid for itself in the first month. <strong className="text-accent">Saved 15 hours</strong> per week on bookkeeping alone. Plus the loyalty system brought back so many old customers."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">7 months using FolioCuts</span>
-                                    <span className="text-foreground-muted">6 staff members</span>
+                                    <span className="text-foreground-muted">6 staff</span>
                                 </div>
                             </div>
-                        </div>
 
-                        <div className="flex space-x-6 min-w-max">
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-secondary text-xl">👨‍💼</span>
+                            {/* Duplicates for seamless loop */}
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-secondary text-sm md:text-xl">👨‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">David Ochieng</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Prestige Barbers Nairobi</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">David Ochieng</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Prestige Barbers Nairobi</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "I never knew my peak hours or which services were most profitable. Now I make data-driven decisions. <strong className="text-accent">Revenue is up 28%</strong> and I've optimized my staff scheduling perfectly."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">10 months using FolioCuts</span>
-                                    <span className="text-foreground-muted">15 staff members</span>
+                                    <span className="text-foreground-muted">15 staff</span>
                                 </div>
                             </div>
 
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-accent text-xl">👩‍💼</span>
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-accent/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-accent text-sm md:text-xl">👩‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">Mary Njeri</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Style Studio Nakuru</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">Mary Njeri</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Style Studio Nakuru</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "I was worried about learning new technology, but setup took literally <strong className="text-secondary">3 minutes</strong>. My staff picked it up immediately. It's so intuitive, even my oldest barber loves using it."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">4 months using FolioCuts</span>
-                                    <span className="text-foreground-muted">9 staff members</span>
+                                    <span className="text-foreground-muted">9 staff</span>
                                 </div>
                             </div>
 
-                            <div className="bg-background rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow w-96 flex-shrink-0">
-                                <div className="flex items-center mb-6">
-                                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mr-4">
-                                        <span className="text-primary text-xl">👨‍💼</span>
+                            <div className="bg-background rounded-xl md:rounded-2xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-shadow w-64 md:w-96 flex-shrink-0">
+                                <div className="flex items-center mb-3 md:mb-6">
+                                    <div className="w-8 h-8 md:w-12 md:h-12 bg-primary/20 rounded-full flex items-center justify-center mr-2 md:mr-4">
+                                        <span className="text-primary text-sm md:text-xl">👨‍💼</span>
                                     </div>
                                     <div>
-                                        <h4 className="font-headings font-bold text-primary">Peter Kamau</h4>
-                                        <p className="text-sm text-foreground-muted">Owner, Sharp Cuts Eldoret</p>
+                                        <h4 className="font-headings font-bold text-primary text-xs md:text-base">Peter Kamau</h4>
+                                        <p className="text-xs md:text-sm text-foreground-muted">Owner, Sharp Cuts Eldoret</p>
                                     </div>
                                 </div>
-                                <div className="mb-6">
-                                    <div className="flex text-secondary mb-3">
-                                        <span>⭐⭐⭐⭐⭐</span>
+                                <div className="mb-3 md:mb-6">
+                                    <div className="flex text-secondary mb-2 md:mb-3">
+                                        <span className="text-xs md:text-base">⭐⭐⭐⭐⭐</span>
                                     </div>
-                                    <blockquote className="font-body text-foreground-muted leading-relaxed">
+                                    <blockquote className="font-body text-foreground-muted leading-relaxed text-xs md:text-base">
                                         "FolioCuts paid for itself in the first month. <strong className="text-accent">Saved 15 hours</strong> per week on bookkeeping alone. Plus the loyalty system brought back so many old customers."
                                     </blockquote>
                                 </div>
-                                <div className="flex items-center justify-between text-sm">
+                                <div className="flex items-center justify-between text-xs md:text-sm">
                                     <span className="text-accent font-medium">7 months using FolioCuts</span>
-                                    <span className="text-foreground-muted">6 staff members</span>
+                                    <span className="text-foreground-muted">6 staff</span>
                                 </div>
                             </div>
                         </div>
@@ -366,7 +372,7 @@ export default function Testimonials() {
                             </div>
                         </div>
 
-                        <div className="flex items-center justify-center space-x-8 mt-8 pt-8 border-t border-white/20">
+                        <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8 mt-8 pt-8 border-t border-white/20">
                             <div className="flex items-center text-white/80">
                                 <span className="mr-2">🚀</span>
                                 <span className="text-sm">Quick 3-min setup</span>
