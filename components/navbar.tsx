@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,22 +18,17 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? 'bg-white/95 backdrop-blur-sm border-b border-neutral shadow-sm'
-            : 'bg-white/90 backdrop-blur-sm border-b border-neutral/20 shadow-sm'
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${isScrolled
+            ? 'bg-white border-b border-neutral/20 shadow-sm'
+            : 'bg-white/80 backdrop-blur-md'
             }`}>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
+            <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+                <div className="flex items-center justify-between h-20">
 
                     <div className="flex items-center">
-                        <div className="flex items-center space-x-3">
-                            <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center border border-secondary/20">
-                                <span className="text-primary font-bold text-xl">💈</span>
-                            </div>
-                            <div>
-                                <h1 className="font-headings text-xl font-bold text-primary">FolioCuts</h1>
-                                <p className="text-xs text-foreground-muted">Digital Barbershop Platform</p>
-                            </div>
+                        <div className="flex items-center space-x-2">
+                            <span className="text-2xl">💈</span>
+                            <h1 className="font-headings text-xl font-semibold text-primary">FolioCuts</h1>
                         </div>
                     </div>
 
@@ -71,13 +67,13 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    <div className="hidden md:flex items-center space-x-4">
-                        <button className="font-body text-foreground-muted hover:text-primary transition-all duration-300">
-                            Log In
-                        </button>
-                        <button className="px-6 py-2 bg-secondary text-primary font-semibold rounded-full hover:bg-secondary-light transition-all duration-300 border border-secondary shadow-lg hover:shadow-xl">
-                            Get Started
-                        </button>
+                    <div className="hidden md:flex items-center space-x-6">
+                        <Link href="https://foliocuts-frontend-df8m.vercel.app" target="_blank" className="font-body text-sm text-foreground-muted hover:text-primary transition-colors">
+                                Log in
+                        </Link>
+                        <Link href="https://foliocuts-frontend-df8m.vercel.app" target="_blank" className="px-5 py-2.5 bg-primary text-white font-medium text-sm rounded-lg hover:bg-primary-light transition-colors">
+                                Get started →
+                        </Link>
                     </div>
 
                     <div className="md:hidden">
@@ -136,12 +132,12 @@ export default function Navbar() {
                             </a>
 
                             <div className="pt-4 space-y-2">
-                                <button className="w-full px-4 py-2 font-body text-foreground-muted hover:text-primary transition-all duration-300 text-left">
-                                    Log In
-                                </button>
-                                <button className="w-full px-4 py-2 bg-secondary text-primary font-semibold rounded-full hover:bg-secondary-light transition-all duration-300 border border-secondary shadow-lg">
-                                    Get Started
-                                </button>
+                                <Link href="https://foliocuts-frontend-df8m.vercel.app" target="_blank" className="block w-full px-4 py-2 font-body text-foreground-muted hover:text-primary transition-colors text-center">
+                                    Log in
+                                </Link>
+                                <Link href="https://foliocuts-frontend-df8m.vercel.app" target="_blank" className="block w-full px-4 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-light transition-colors text-center">
+                                    Get started →
+                                </Link>
                             </div>
                         </div>
                     </div>

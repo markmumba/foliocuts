@@ -203,10 +203,16 @@ h6 {
   grid-template-rows: repeat(12, minmax(0, 1fr));
 }
 
-/* Smooth transitions */
+/* Smooth, subtle transitions - Say Briefly style */
 * {
-  transition-property: transform, opacity, background-color, border-color, color,
-    fill, stroke;
-  transition-duration: 0.3s;
+  transition-property: background-color, border-color, color, opacity;
+  transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Only apply transform transitions to interactive elements */
+button,
+a {
+  transition-property: background-color, border-color, color, opacity, transform;
+  transition-duration: 0.2s;
 }
