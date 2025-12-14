@@ -29,7 +29,7 @@ export default function RiskReversal() {
                             14-Day Free Trial
                         </h3>
                         <p className="font-body text-foreground-muted mb-4">
-                            Full access to all features. No credit card required. 
+                            Full access to all features. No credit card required.
                             Experience everything FolioCuts has to offer with zero commitment.
                         </p>
                         <ul className="space-y-2 text-sm text-foreground-muted">
@@ -85,7 +85,7 @@ export default function RiskReversal() {
                             Data Export Anytime
                         </h3>
                         <p className="font-body text-foreground-muted mb-4">
-                            Your data belongs to you. Export everything in one click, 
+                            Your data belongs to you. Export everything in one click,
                             anytime. No vendor lock-in, ever.
                         </p>
                         <ul className="space-y-2 text-sm text-foreground-muted">
@@ -110,7 +110,7 @@ export default function RiskReversal() {
                         Still Have Concerns?
                     </h3>
                     <p className="font-body text-foreground-muted text-lg mb-8 max-w-2xl mx-auto">
-                        We understand switching systems can feel risky. That's why we offer 
+                        We understand switching systems can feel risky. That's why we offer
                         free onboarding, training, and 24/7 support. Your success is guaranteed.
                     </p>
 

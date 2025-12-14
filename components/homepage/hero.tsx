@@ -5,7 +5,7 @@ import VideoModal from "@/components/ui/VideoModal";
 
 export default function Hero() {
     const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-    
+
     // TODO: Replace with your actual video URL when ready
     // Supports YouTube, Vimeo, or direct video URLs
     const videoUrl = ""; // e.g., "https://www.youtube.com/watch?v=YOUR_VIDEO_ID"

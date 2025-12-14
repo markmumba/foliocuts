@@ -14,7 +14,7 @@ export default function Comparison() {
                     </h2>
 
                     <p className="font-body text-xl text-foreground-muted max-w-3xl mx-auto leading-relaxed">
-                        Stop wasting time on manual processes. See how FolioCuts compares to 
+                        Stop wasting time on manual processes. See how FolioCuts compares to
                         traditional methods.
                     </p>
                 </div>
@@ -150,7 +150,7 @@ export default function Comparison() {
                             Ready to Make the Switch?
                         </h3>
                         <p className="font-body text-foreground-muted mb-6 max-w-2xl mx-auto">
-                            Join 50+ barbershops who've already made the switch from paper ledgers 
+                            Join 50+ barbershops who've already made the switch from paper ledgers
                             and Excel to FolioCuts. Start your free trial today.
                         </p>
                         <a

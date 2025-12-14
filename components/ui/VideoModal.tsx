@@ -37,7 +37,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProp
     // Convert YouTube URL to embed format if needed
     const getEmbedUrl = (url?: string) => {
         if (!url) return null;
-        
+
         // YouTube URL patterns
         if (url.includes("youtube.com/watch")) {
             const videoId = url.split("v=")[1]?.split("&")[0];
@@ -50,13 +50,13 @@ export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProp
         if (url.includes("youtube.com/embed")) {
             return url;
         }
-        
+
         // Vimeo URL patterns
         if (url.includes("vimeo.com/")) {
             const videoId = url.split("vimeo.com/")[1]?.split("?")[0];
             return `https://player.vimeo.com/video/${videoId}`;
         }
-        
+
         // Direct video URL or other formats
         return url;
     };
@@ -131,7 +131,7 @@ export default function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProp
                                 Demo Video Coming Soon
                             </h3>
                             <p className="font-body text-foreground-muted text-center max-w-md mb-6">
-                                We're putting the finishing touches on our demo video. 
+                                We're putting the finishing touches on our demo video.
                                 In the meantime, start your free trial to see FolioCuts in action!
                             </p>
                             <a

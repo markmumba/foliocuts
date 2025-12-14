@@ -18,7 +18,7 @@ export default function Pricing() {
                         No hidden fees, no setup costs, no long-term contracts. Start with any plan
                         and upgrade as your business grows. All plans include 24/7 support and free updates.
                     </p>
-                    
+
                     {/* Urgency Badge */}
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8">
                         <span className="text-accent font-medium text-sm">
@@ -190,7 +190,7 @@ export default function Pricing() {
                     </div>
 
                     <div className="bg-background rounded-3xl p-8 shadow-xl border-2 border-secondary relative hover:shadow-2xl transition-shadow">
-                        
+
                         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                             <span className="bg-secondary text-primary px-4 py-2 rounded-full text-sm font-semibold">
                                 🔥 Most Popular
