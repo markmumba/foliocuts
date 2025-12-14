@@ -14,10 +14,17 @@ export default function Pricing() {
                         <span className="text-accent"> for Your Barbershop</span>
                     </h2>
 
-                    <p className="font-body text-xl text-foreground-muted max-w-3xl mx-auto leading-relaxed mb-8">
+                    <p className="font-body text-xl text-foreground-muted max-w-3xl mx-auto leading-relaxed mb-4">
                         No hidden fees, no setup costs, no long-term contracts. Start with any plan
                         and upgrade as your business grows. All plans include 24/7 support and free updates.
                     </p>
+                    
+                    {/* Urgency Badge */}
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8">
+                        <span className="text-accent font-medium text-sm">
+                            🎁 Early Adopter Pricing - Lock in current rates before Q2 2024 price increase
+                        </span>
+                    </div>
 
                     <div className="flex items-center justify-center space-x-4">
                         <span className="font-body text-foreground-muted">Monthly</span>
@@ -31,6 +38,69 @@ export default function Pricing() {
                     </div>
                 </div>
 
+                {/* ROI Calculator */}
+                <div className="mb-16">
+                    <div className="bg-gradient-to-r from-secondary/10 via-accent/10 to-primary/10 rounded-3xl p-8 md:p-12 border border-primary/10">
+                        <div className="text-center mb-8">
+                            <h3 className="font-headings text-2xl md:text-3xl font-bold text-primary mb-3">
+                                See Your ROI in Real-Time
+                            </h3>
+                            <p className="font-body text-foreground-muted max-w-2xl mx-auto">
+                                Calculate how much time and money FolioCuts saves your barbershop
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-3 gap-6 mb-6">
+                            <div className="bg-background rounded-2xl p-6 text-center border border-primary/10">
+                                <div className="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                    <span className="text-2xl">⏱️</span>
+                                </div>
+                                <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">15 hrs</div>
+                                <div className="text-sm text-foreground-muted">Time saved per week</div>
+                                <div className="text-xs text-accent mt-2 font-medium">No more manual bookkeeping</div>
+                            </div>
+
+                            <div className="bg-background rounded-2xl p-6 text-center border border-primary/10">
+                                <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                    <span className="text-2xl">💰</span>
+                                </div>
+                                <div className="text-3xl md:text-4xl font-bold text-accent mb-2">KES 30K</div>
+                                <div className="text-sm text-foreground-muted">Value of saved time</div>
+                                <div className="text-xs text-secondary mt-2 font-medium">Based on avg hourly rate</div>
+                            </div>
+
+                            <div className="bg-background rounded-2xl p-6 text-center border border-primary/10">
+                                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                    <span className="text-2xl">📈</span>
+                                </div>
+                                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">6.7x</div>
+                                <div className="text-sm text-foreground-muted">ROI on Pro plan</div>
+                                <div className="text-xs text-accent mt-2 font-medium">Pays for itself in 2 days</div>
+                            </div>
+                        </div>
+
+                        <div className="bg-background rounded-2xl p-6 border border-secondary/20">
+                            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                                <div className="text-center md:text-left">
+                                    <p className="font-body text-foreground-muted mb-2">
+                                        <strong className="text-primary">Average shop sees ROI in first month</strong>
+                                    </p>
+                                    <p className="text-sm text-foreground-muted">
+                                        Most barbershops recover their subscription cost within 2-3 days through time savings alone
+                                    </p>
+                                </div>
+                                <a
+                                    href="https://foliocuts-frontend-df8m.vercel.app"
+                                    target="_blank"
+                                    className="px-6 py-3 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors whitespace-nowrap"
+                                >
+                                    Start Free Trial
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="grid md:grid-cols-3 gap-8 mb-16">
 
                     <div className="bg-neutral rounded-3xl p-8 hover:shadow-lg transition-shadow">
@@ -38,9 +108,21 @@ export default function Pricing() {
                             <h3 className="font-headings text-2xl font-bold text-primary mb-2">Basic</h3>
                             <p className="text-foreground-muted mb-6">Perfect for small barbershops getting started</p>
 
-                            <div className="mb-6">
+                            <div className="mb-4">
                                 <span className="text-4xl font-bold text-primary">KES 2,500</span>
                                 <span className="text-foreground-muted">/month</span>
+                            </div>
+
+                            {/* Value Anchor */}
+                            <div className="mb-6 px-4 py-2 bg-secondary/10 rounded-lg border border-secondary/20">
+                                <p className="text-sm text-center">
+                                    <span className="text-foreground-muted">Just </span>
+                                    <span className="font-semibold text-secondary">KES 500</span>
+                                    <span className="text-foreground-muted"> per staff member</span>
+                                </p>
+                                <p className="text-xs text-center text-foreground-muted mt-1">
+                                    Less than 1 haircut per day
+                                </p>
                             </div>
 
                             <button className="w-full px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors">
@@ -119,9 +201,21 @@ export default function Pricing() {
                             <h3 className="font-headings text-2xl font-bold text-primary mb-2">Pro</h3>
                             <p className="text-foreground-muted mb-6">Ideal for growing barbershops with multiple staff</p>
 
-                            <div className="mb-6">
+                            <div className="mb-4">
                                 <span className="text-4xl font-bold text-secondary">KES 4,500</span>
                                 <span className="text-foreground-muted">/month</span>
+                            </div>
+
+                            {/* Value Anchor */}
+                            <div className="mb-6 px-4 py-2 bg-accent/10 rounded-lg border border-accent/20">
+                                <p className="text-sm text-center">
+                                    <span className="text-foreground-muted">Only </span>
+                                    <span className="font-semibold text-accent">KES 300</span>
+                                    <span className="text-foreground-muted"> per staff member</span>
+                                </p>
+                                <p className="text-xs text-center text-foreground-muted mt-1">
+                                    Pays for itself in 2 days
+                                </p>
                             </div>
 
                             <button className="w-full px-6 py-3 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors shadow-lg">
@@ -200,9 +294,20 @@ export default function Pricing() {
                             <h3 className="font-headings text-2xl font-bold text-primary mb-2">Enterprise</h3>
                             <p className="text-foreground-muted mb-6">For large barbershops and multi-location businesses</p>
 
-                            <div className="mb-6">
+                            <div className="mb-4">
                                 <span className="text-4xl font-bold text-primary">KES 7,500</span>
                                 <span className="text-foreground-muted">/month</span>
+                            </div>
+
+                            {/* Value Anchor */}
+                            <div className="mb-6 px-4 py-2 bg-primary/10 rounded-lg border border-primary/20">
+                                <p className="text-sm text-center">
+                                    <span className="text-foreground-muted">Scalable pricing for </span>
+                                    <span className="font-semibold text-primary">16+ staff</span>
+                                </p>
+                                <p className="text-xs text-center text-foreground-muted mt-1">
+                                    Multi-location support included
+                                </p>
                             </div>
 
                             <button className="w-full px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors">
