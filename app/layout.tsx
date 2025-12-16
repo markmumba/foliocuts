@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { DM_Serif_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 
-// Poppins for headings - bold, modern, catches attention for CTAs & section titles
-const poppins = Poppins({
-  variable: "--font-poppins",
+// DM Serif Display for headings - elegant, sophisticated, perfect for premium brand positioning
+const dmSerif = DM_Serif_Display({
+  variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
-// Inter for body text - clean, professional, highly readable on tablets in dimly lit barbershops
-const inter = Inter({
-  variable: "--font-inter",
+// DM Sans for body text - clean, professional, highly readable on tablets in dimly lit barbershops
+const dmSans = DM_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -30,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${inter.variable} antialiased`}
+        className={`${dmSerif.variable} ${dmSans.variable} antialiased`}
       >
         <Navbar />
         {children}
