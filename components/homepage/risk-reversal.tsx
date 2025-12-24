@@ -1,3 +1,5 @@
+const frontendUrl: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
+
 export default function RiskReversal() {
     return (
         <section className="py-20 bg-gradient-to-br from-accent/5 via-secondary/5 to-primary/5">
@@ -116,7 +118,7 @@ export default function RiskReversal() {
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                         <a
-                            href="https://foliocuts-frontend-df8m.vercel.app"
+                            href={frontendUrl}
                             target="_blank"
                             className="px-8 py-4 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors shadow-lg"
                         >

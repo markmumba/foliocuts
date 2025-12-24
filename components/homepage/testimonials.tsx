@@ -1,6 +1,10 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Testimonials() {
+    const frontendUrl: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
+
     return (
         <section id="testimonials" className="py-20 bg-neutral overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -362,9 +366,10 @@ export default function Testimonials() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <button className="px-8 py-4 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors shadow-lg">
+                            <Link href={frontendUrl} className="px-8 py-4 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors shadow-lg">
                                 Start Your Success Story
-                            </button>
+                                <span>→</span>
+                            </Link>
 
                             <div className="flex items-center text-white/80">
                                 <span className="mr-2">🎯</span>

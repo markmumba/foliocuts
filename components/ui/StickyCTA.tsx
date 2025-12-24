@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+
+const frontendUrlRegister: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
 
 export default function StickyCTA() {
     const [isVisible, setIsVisible] = useState(false);
@@ -20,14 +23,12 @@ export default function StickyCTA() {
     return (
         <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 animate-in slide-in-from-bottom-4">
             <div className="bg-background border-2 border-secondary/30 rounded-full px-6 py-3 shadow-2xl flex items-center gap-4 backdrop-blur-sm">
-                <a
-                    href="https://foliocuts-frontend-df8m.vercel.app"
-                    target="_blank"
+                <Link
+                    href={frontendUrlRegister}
                     className="px-6 py-2.5 bg-secondary text-primary font-semibold rounded-full hover:bg-secondary-light transition-colors whitespace-nowrap flex items-center gap-2"
                 >
-                    <span>Start Free Trial</span>
-                    <span>→</span>
-                </a>
+                    <span>Start Free Trial</span> <span>→</span>
+                </Link>
                 <button
                     onClick={() => setIsVisible(false)}
                     className="text-foreground-muted hover:text-primary transition-colors p-1"

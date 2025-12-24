@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+const frontendUrl: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
+
 export default function Comparison() {
     return (
         <section className="py-20 bg-background">
@@ -153,14 +157,13 @@ export default function Comparison() {
                             Join 50+ barbershops who've already made the switch from paper ledgers
                             and Excel to FolioCuts. Start your free trial today.
                         </p>
-                        <a
-                            href="https://foliocuts-frontend-df8m.vercel.app"
-                            target="_blank"
+                        <Link
+                            href={frontendUrl}
                             className="inline-flex items-center px-8 py-4 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors shadow-lg"
                         >
                             <span>Start Free Trial</span>
-                            <span className="ml-2">→</span>
-                        </a>
+                            <span>→</span>
+                        </Link>
                     </div>
                 </div>
             </div>

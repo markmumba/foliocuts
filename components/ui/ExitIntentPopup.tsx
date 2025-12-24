@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+
+const frontendUrlRegister: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
 
 interface ExitIntentPopupProps {
     onClose: () => void;
@@ -104,14 +107,13 @@ export default function ExitIntentPopup({ onClose, isOpen }: ExitIntentPopupProp
                     </div>
 
                     <div className="space-y-3">
-                        <a
-                            href="https://foliocuts-frontend-df8m.vercel.app"
-                            target="_blank"
+                        <Link
+                            href={frontendUrlRegister}
                             onClick={onClose}
                             className="block w-full px-6 py-3 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors text-center"
                         >
                             Claim 20% Off Now
-                        </a>
+                        </Link>
                         <button
                             onClick={onClose}
                             className="block w-full px-6 py-3 text-foreground-muted hover:text-primary transition-colors text-sm"

@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import Link from "next/link";
+
+const frontendUrl: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
 
 export default function HowItWorks() {
   const fadeInUp = {
@@ -217,13 +220,12 @@ export default function HowItWorks() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="https://foliocuts-frontend-df8m.vercel.app"
-                target="_blank"
+              <Link 
+                href={frontendUrl}
                 className="px-8 py-4 bg-secondary text-primary font-semibold rounded-full hover:bg-secondary-light transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Start Free Trial Today
-              </a>
+              </Link>
 
               <div className="flex items-center gap-2 text-foreground-muted">
                 <span>💳</span>

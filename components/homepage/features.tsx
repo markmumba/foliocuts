@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import Link from "next/link";
+
+const frontendUrl: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
 
 export default function Features() {
   const fadeInUp = {
@@ -194,14 +197,13 @@ export default function Features() {
             Join 50+ shops using FolioCuts across Kenya. Start your free trial today.
           </p>
 
-          <a
-            href="https://foliocuts-frontend-df8m.vercel.app"
-            target="_blank"
+          <Link
+            href={frontendUrl}
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary font-semibold text-base rounded-full hover:bg-secondary hover:text-primary transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
           >
             <span>Start free trial</span>
             <span>→</span>
-          </a>
+          </Link>
 
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-8 pt-8 border-t border-white/20">
             {["14-day free trial", "3-min setup", "No credit card"].map((item) => (

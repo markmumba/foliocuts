@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play, Check, TrendingUp, Users, Zap } from "lucide-react";
 import { useState } from "react";
 import VideoModal from "@/components/ui/VideoModal";
+import Link from "next/link";
+
+const frontendUrl: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
 
 export default function Hero() {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -65,14 +68,13 @@ export default function Hero() {
               transition={{ delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 mb-8"
             >
-              <a
-                href="https://foliocuts-frontend-df8m.vercel.app"
-                target="_blank"
+              <Link
+                href={frontendUrl}
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-primary font-semibold text-base rounded-full hover:bg-secondary-light transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 <span>Start free trial</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-              </a>
+              </Link>
               <button
                 onClick={() => setIsVideoModalOpen(true)}
                 className="group inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-primary/20 text-foreground font-medium text-base hover:border-accent hover:text-accent transition-all duration-200 rounded-full"

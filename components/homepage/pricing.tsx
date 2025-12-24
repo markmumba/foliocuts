@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+const frontendUrl: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
+
 export default function Pricing() {
     return (
         <section id="pricing" className="py-20 bg-background">
@@ -90,7 +94,7 @@ export default function Pricing() {
                                     </p>
                                 </div>
                                 <a
-                                    href="https://foliocuts-frontend-df8m.vercel.app"
+                                    href={frontendUrl}
                                     target="_blank"
                                     className="px-6 py-3 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors whitespace-nowrap"
                                 >
@@ -125,9 +129,9 @@ export default function Pricing() {
                                 </p>
                             </div>
 
-                            <button className="w-full px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors">
+                            <a href={frontendUrl} target="_blank" className="w-full px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors">
                                 Start Free Trial
-                            </button>
+                            </a>
                         </div>
 
                         <div className="space-y-4">
@@ -218,9 +222,9 @@ export default function Pricing() {
                                 </p>
                             </div>
 
-                            <button className="w-full px-6 py-3 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors shadow-lg">
+                            <Link href={frontendUrl} target="_blank" className="w-full px-6 py-3 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors shadow-lg">
                                 Start Free Trial
-                            </button>
+                            </Link>
                         </div>
 
                         <div className="space-y-4">
@@ -310,9 +314,10 @@ export default function Pricing() {
                                 </p>
                             </div>
 
-                            <button className="w-full px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors">
-                                Contact Sales
-                            </button>
+                            <Link href={frontendUrl} className="w-full px-6 py-3 border-2 border-primary text-primary font-semibold rounded-lg hover:bg-primary hover:text-white transition-colors">
+                                <span>Contact Sales</span>
+                                <span>→</span>
+                            </Link>
                         </div>
 
                         <div className="space-y-4">
@@ -470,9 +475,10 @@ export default function Pricing() {
                         Join 50+ barbershops already growing with FolioCuts. Start your free trial today.
                     </p>
 
-                    <button className="px-8 py-4 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors shadow-lg">
-                        Start Your Free Trial Now
-                    </button>
+                    <Link href={frontendUrl} className="px-8 py-4 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors shadow-lg">
+                        <span>Start Your Free Trial Now</span>
+                        <span>→</span>
+                    </Link>
 
                     <p className="font-body text-foreground-muted text-sm mt-4">
                         No credit card required • 14-day free trial • Cancel anytime

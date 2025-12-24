@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+const frontendUrl: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
+
 export default function Footer() {
     return (
         <footer className="bg-primary text-white">
@@ -13,9 +17,9 @@ export default function Footer() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-                        <button className="px-8 py-4 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors shadow-lg">
+                        <Link href={frontendUrl} className="px-8 py-4 bg-secondary text-primary font-semibold rounded-lg hover:bg-secondary-light transition-colors shadow-lg">
                             Start Free Trial Now
-                        </button>
+                        </Link>
 
                         <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors">
                             Schedule a Demo

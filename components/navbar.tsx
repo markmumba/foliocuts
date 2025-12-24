@@ -3,10 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-let frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL;
-if (!frontendUrl) {
-    frontendUrl = "https://foliocuts.blazor-movies.online/register";
-}
+const frontendUrlRegister: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
+const frontendUrlLogin: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/login";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -73,11 +71,11 @@ export default function Navbar() {
                     </div>
 
                     <div className="hidden md:flex items-center space-x-6">
-                        <Link href="https://foliocuts-frontend-df8m.vercel.app" target="_blank" className="font-body text-sm text-foreground-muted hover:text-primary transition-colors">
-                                Log in
+                        <Link href={frontendUrlLogin}  className="font-body text-sm text-foreground-muted hover:text-primary transition-colors">
+                            Log in
                         </Link>
-                        <Link href="https://foliocuts-frontend-df8m.vercel.app" target="_blank" className="px-5 py-2.5 bg-primary text-white font-medium text-sm rounded-lg hover:bg-primary-light transition-colors">
-                                Get started →
+                        <Link href={frontendUrlRegister} className="px-5 py-2.5 bg-primary text-white font-medium text-sm rounded-lg hover:bg-primary-light transition-colors">
+                            Get started →
                         </Link>
                     </div>
 
@@ -137,11 +135,11 @@ export default function Navbar() {
                             </a>
 
                             <div className="pt-4 space-y-2">
-                                <Link href="https://foliocuts-frontend-df8m.vercel.app" target="_blank" className="block w-full px-4 py-2 font-body text-foreground-muted hover:text-primary transition-colors text-center">
-                                    Log in
+                                <Link href={frontendUrlLogin} className="block w-full px-4 py-2 font-body text-foreground-muted hover:text-primary transition-colors text-center">
+                                    <span>Log in</span> <span>→</span>
                                 </Link>
-                                <Link href="https://foliocuts-frontend-df8m.vercel.app" target="_blank" className="block w-full px-4 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-light transition-colors text-center">
-                                    Get started →
+                                <Link href={frontendUrlRegister} className="block w-full px-4 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-light transition-colors text-center">
+                                    <span>Get started</span> <span>→</span>
                                 </Link>
                             </div>
                         </div>
