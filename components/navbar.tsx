@@ -3,6 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
+let frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL;
+if (!frontendUrl) {
+    frontendUrl = "https://foliocuts.blazor-movies.online/register";
+}
+
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
