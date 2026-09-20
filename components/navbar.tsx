@@ -1,151 +1,100 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import type { Easing } from "framer-motion";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import Brand from "@/components/brand";
+import { loginUrl, registerUrl } from "@/lib/links";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
+const ease: Easing = [0.23, 1, 0.32, 1];
 
-const frontendUrlRegister: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/register";
-const frontendUrlLogin: string = process.env.NEXT_PUBLIC_FRONTEND_URL || "https://foliocuts.blazor-movies.online/login";
+const links = [
+  ["Features", "/features"],
+  ["Pricing", "/pricing"],
+  ["Blogs", "/blogs"],
+  ["Contact Us", "/contact"],
+];
 
 export default function Navbar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            setIsScrolled(scrollTop > 800);
-        };
+  useEffect(() => {
+    if (!open) return;
+    const close = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggle.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", close);
+    return () => document.removeEventListener("keydown", close);
+  }, [open]);
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  return (
+    <header className="site-header">
+      <nav className="container navigation" aria-label="Main navigation">
+        <Brand />
+        <div className="desktop-links">
+          {links.map(([label, href]) => (
+            <a key={href} href={href}>
+              {label}
+            </a>
+          ))}
+        </div>
+        <div className="nav-actions">
+          <a className="login-link" href={loginUrl}>
+            Log in
+          </a>
+          <a className="button button-small" href={registerUrl}>
+            Get started <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+        </div>
+        <button
+          ref={toggle}
+          className="menu-toggle"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpen(!open)}
+        >
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={open ? "close" : "open"}
+              initial={{ opacity: 0, transform: "scale(0.7) rotate(-45deg)" }}
+              animate={{ opacity: 1, transform: "scale(1) rotate(0deg)" }}
+              exit={{ opacity: 0, transform: "scale(0.7) rotate(45deg)" }}
+              transition={{ duration: 0.15, ease }}
+              style={{ display: "flex" }}
+            >
+              {open ? <X /> : <Menu />}
+            </motion.span>
+          </AnimatePresence>
+        </button>
+      </nav>
 
-    return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${isScrolled
-            ? 'bg-white border-b border-neutral/20 shadow-sm'
-            : 'bg-white/80 backdrop-blur-md'
-            }`}>
-            <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-                <div className="flex items-center justify-between h-20">
-
-                    <div className="flex items-center">
-                        <div className="flex items-center space-x-2">
-                            <span className="text-2xl">💈</span>
-                            <h1 className="font-headings text-xl font-semibold text-primary">FolioCuts</h1>
-                        </div>
-                    </div>
-
-                    <div className="hidden md:block">
-                        <div className="flex items-center space-x-8">
-                            <a
-                                href="#features"
-                                className="font-body text-foreground-muted hover:text-primary transition-all duration-300 cursor-pointer"
-                            >
-                                For Barbers
-                            </a>
-                            <a
-                                href="#features"
-                                className="font-body text-foreground-muted hover:text-primary transition-all duration-300 cursor-pointer"
-                            >
-                                For Shop Owners
-                            </a>
-                            <a
-                                href="#how-it-works"
-                                className="font-body text-foreground-muted hover:text-primary transition-all duration-300 cursor-pointer"
-                            >
-                                How It Works
-                            </a>
-                            <a
-                                href="#testimonials"
-                                className="font-body text-foreground-muted hover:text-primary transition-all duration-300 cursor-pointer"
-                            >
-                                Success Stories
-                            </a>
-                            <a
-                                href="#pricing"
-                                className="font-body text-foreground-muted hover:text-primary transition-all duration-300 cursor-pointer"
-                            >
-                                Pricing
-                            </a>
-                        </div>
-                    </div>
-
-                    <div className="hidden md:flex items-center space-x-6">
-                        <Link href={frontendUrlLogin}  className="font-body text-sm text-foreground-muted hover:text-primary transition-colors">
-                            Log in
-                        </Link>
-                        <Link href={frontendUrlRegister} className="px-5 py-2.5 bg-primary text-white font-medium text-sm rounded-lg hover:bg-primary-light transition-colors">
-                            Get started →
-                        </Link>
-                    </div>
-
-                    <div className="md:hidden">
-                        <button
-                            onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="p-2 rounded-lg text-foreground-muted hover:text-primary hover:bg-neutral transition-all duration-300 border border-neutral"
-                        >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                {isMenuOpen ? (
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                ) : (
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                                )}
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-
-                {isMenuOpen && (
-                    <div className="md:hidden border-t border-neutral bg-white/95 backdrop-blur-sm">
-                        <div className="px-2 pt-2 pb-3 space-y-1">
-                            <a
-                                href="#features"
-                                className="block px-3 py-2 font-body text-foreground-muted hover:text-primary hover:bg-neutral rounded-lg transition-all duration-300"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                For Barbers
-                            </a>
-                            <a
-                                href="#features"
-                                className="block px-3 py-2 font-body text-foreground-muted hover:text-primary hover:bg-neutral rounded-lg transition-all duration-300"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                For Shop Owners
-                            </a>
-                            <a
-                                href="#how-it-works"
-                                className="block px-3 py-2 font-body text-foreground-muted hover:text-primary hover:bg-neutral rounded-lg transition-all duration-300"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                How It Works
-                            </a>
-                            <a
-                                href="#testimonials"
-                                className="block px-3 py-2 font-body text-foreground-muted hover:text-primary hover:bg-neutral rounded-lg transition-all duration-300"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Success Stories
-                            </a>
-                            <a
-                                href="#pricing"
-                                className="block px-3 py-2 font-body text-foreground-muted hover:text-primary hover:bg-neutral rounded-lg transition-all duration-300"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Pricing
-                            </a>
-
-                            <div className="pt-4 space-y-2">
-                                <Link href={frontendUrlLogin} className="block w-full px-4 py-2 font-body text-foreground-muted hover:text-primary transition-colors text-center">
-                                    <span>Log in</span> <span>→</span>
-                                </Link>
-                                <Link href={frontendUrlRegister} className="block w-full px-4 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-light transition-colors text-center">
-                                    <span>Get started</span> <span>→</span>
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                )}
-            </div>
-        </nav>
-    );
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            id="mobile-navigation"
+            className="mobile-navigation"
+            initial={{ opacity: 0, transform: "translateY(-8px)" }}
+            animate={{ opacity: 1, transform: "translateY(0px)" }}
+            exit={{ opacity: 0, transform: "translateY(-8px)" }}
+            transition={{ duration: 0.2, ease }}
+          >
+            {links.map(([label, href]) => (
+              <a key={href} href={href} onClick={() => setOpen(false)}>
+                {label}
+              </a>
+            ))}
+            <a href={loginUrl}>Log in</a>
+            <a className="button" href={registerUrl}>
+              Get started <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
 }

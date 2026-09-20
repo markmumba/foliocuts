@@ -1,38 +1,27 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, DM_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 
-// DM Serif Display for headings - elegant, sophisticated, perfect for premium brand positioning
-const dmSerif = DM_Serif_Display({
-  variable: "--font-serif",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
+  display: "swap",
 });
-
-// DM Sans for body text - clean, professional, highly readable on tablets in dimly lit barbershops
-const dmSans = DM_Sans({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
 export const metadata: Metadata = {
-  title: "FolioCuts - Digital Barbershop Management System",
-  description: "Transform your barbershop with Kenya's first digital management system. Commission transparency, M-Pesa integration, and invisible loyalty programs.",
+  title: "FolioCuts — Your shop, beautifully in order",
+  description:
+    "Run your barbershop with clarity. Track cash and M-Pesa payments, staff commissions, and customer loyalty with FolioCuts. Built for Kenyan barbershops and salons.",
 };
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${dmSerif.variable} ${dmSans.variable} antialiased`}
-      >
+      <body className={inter.variable}>
+        <a className="skip-link" href="#main-content">
+          Skip to content
+        </a>
         <Navbar />
         {children}
       </body>
