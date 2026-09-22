@@ -7,3 +7,4 @@ const appRoot = configuredUrl
   .replace(/\/(register|login)$/, "");
 export const registerUrl = `${appRoot}/register`;
 export const loginUrl = `${appRoot}/login`;
+export const contactEmail = "markmumba01@gmail.com";

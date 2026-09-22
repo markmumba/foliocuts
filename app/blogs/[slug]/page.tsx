@@ -16,10 +16,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogBySlug(slug);
-  if (!post) return { title: "Not Found — FolioCuts" };
+  if (!post) return { title: "Article not found" };
   return {
-    title: `${post.title} — FolioCuts Blog`,
+    title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/blogs/${post.slug}` },
   };
 }
 

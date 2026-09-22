@@ -6,6 +6,11 @@ import {
   Smartphone,
   Wallet,
 } from "lucide-react";
+import {
+  CommissionDoodle,
+  PaymentsDoodle,
+  VisitsDoodle,
+} from "./doodles";
 export function Avatar({
   initials,
   tone = "peach",
@@ -44,6 +49,9 @@ export default function ProductPreview() {
       className="product-preview"
       aria-label="FolioCuts product preview with sample shop data"
     >
+      <PaymentsDoodle />
+      <VisitsDoodle />
+      <CommissionDoodle />
       <div className="preview-cards">
         <div className="preview-card activity-card">
           <div className="card-title">

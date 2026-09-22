@@ -32,11 +32,11 @@ export default function Introduction() {
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.45, ease }}
       >
-        <p className="eyebrow">A LITTLE LESS ADMIN. A LOT MORE CLARITY.</p>
+        <p className="eyebrow">BARBERSHOP OPERATIONS, ALL IN ONE PLACE</p>
         <h2 id="intro-title">
-          Good for your business.
+          Run your barbershop with less admin.
           <br />
-          Better for your peace of mind.
+          See the business clearly.
         </h2>
       </motion.div>
 

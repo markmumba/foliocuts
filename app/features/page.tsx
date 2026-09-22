@@ -6,9 +6,10 @@ import FAQ from "@/components/homepage/faq";
 import Footer from "@/components/homepage/footer";
 
 export const metadata: Metadata = {
-  title: "Features — FolioCuts",
+  title: "Barbershop Management Software Features",
   description:
-    "Service records, staff commissions, M-Pesa payments, and customer loyalty — all in one place. Built for Kenyan barbershops.",
+    "Explore FolioCuts features for Kenyan barbershops and salons: digital service records, automatic staff commissions, M-Pesa payments, customer history, and loyalty rewards.",
+  alternates: { canonical: "/features" },
 };
 
 export default function FeaturesPage() {

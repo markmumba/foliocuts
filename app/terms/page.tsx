@@ -3,9 +3,10 @@ import ContactCta from "@/components/contact/contact-cta";
 import Footer from "@/components/homepage/footer";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions — FolioCuts",
+  title: "Terms & Conditions",
   description:
     "Terms and conditions for using FolioCuts barbershop management platform. Read before signing up.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {
@@ -16,7 +17,7 @@ export default function TermsPage() {
           <div className="container">
             <div className="legal-header">
               <h1>Terms &amp; Conditions</h1>
-              <p className="legal-date">Last Updated: 20 September, 2026</p>
+              <p className="legal-date">Last updated: 21 September 2026</p>
             </div>
             <div className="legal-content">
               <h2>1. Introduction</h2>
@@ -25,17 +26,12 @@ export default function TermsPage() {
                 purposes and in accordance with these terms. You may not use our
                 products or services for any illegal or unauthorised purpose.
               </p>
-              <ul>
-                <li>
-                  Explanation of the purpose of the terms and conditions.
-                </li>
-                <li>
-                  Identification of the parties involved (e.g., &ldquo;We,&rdquo;
-                  &ldquo;Us,&rdquo; &ldquo;Our Company&rdquo; for the provider,
-                  and &ldquo;You,&rdquo; &ldquo;Your,&rdquo; &ldquo;User&rdquo;
-                  for the customer).
-                </li>
-              </ul>
+              <p>
+                In these terms, &ldquo;FolioCuts,&rdquo; &ldquo;we,&rdquo; and
+                &ldquo;us&rdquo; refer to the provider of the platform.
+                &ldquo;You&rdquo; refers to the person or business that creates
+                an account or uses the service.
+              </p>
 
               <h2>2. Intellectual Property</h2>
               <p>
@@ -53,20 +49,11 @@ export default function TermsPage() {
                 FolioCuts, you agree to the collection and use of information in
                 accordance with our Privacy Policy.
               </p>
-              <ul>
-                <li>
-                  Explanation of how user data is collected, stored, used, and
-                  protected.
-                </li>
-                <li>
-                  Compliance with data protection laws and regulations (e.g.,
-                  Kenya Data Protection Act).
-                </li>
-                <li>
-                  User consent for data processing activities, including opt-in
-                  and opt-out options for marketing communications.
-                </li>
-              </ul>
+              <p>
+                Please read the <a href="/privacy">Privacy Policy</a> for more
+                information about the data FolioCuts processes and the choices
+                available to you.
+              </p>
 
               <h2>4. Disclaimer of Warranties</h2>
               <p>

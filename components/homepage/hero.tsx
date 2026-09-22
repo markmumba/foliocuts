@@ -26,8 +26,8 @@ export default function Hero() {
             className="eyebrow"
             {...(reduce ? {} : item(0))}
           >
-            <Scissors size={14} aria-hidden="true" /> BUILT FOR THE BUSINESS
-            BEHIND THE CHAIR
+            <Scissors size={14} aria-hidden="true" /> BARBERSHOP MANAGEMENT
+            SOFTWARE FOR KENYA
           </motion.p>
 
           {/* Tip #7 — blur bridges the headline entrance gap */}
@@ -36,7 +36,7 @@ export default function Hero() {
             animate={reduce ? undefined : { opacity: 1, transform: "translateY(0px)", filter: "blur(0px)" }}
             transition={reduce ? undefined : { duration: 0.65, ease, delay: 0.08 }}
           >
-            Your shop.
+            Manage your barbershop.
             <br />
             Beautifully in order.
           </motion.h1>
@@ -45,9 +45,9 @@ export default function Hero() {
             className="hero-description"
             {...(reduce ? {} : item(0.2))}
           >
-            From the first haircut to the last payment.
-            <br className="desktop-break" /> Keep your sales, commissions, and
-            customers in sync.
+            Manage every service, cash and M-Pesa payment, staff commission,
+            <br className="desktop-break" /> and customer visit from one clear
+            dashboard.
           </motion.p>
 
           <motion.div

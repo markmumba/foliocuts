@@ -1,11 +1,13 @@
 import { ArrowUpRight, Check, Scissors } from "lucide-react";
 import Brand from "@/components/brand";
 import { loginUrl, registerUrl } from "@/lib/links";
+import { CtaDoodle } from "@/components/homepage/doodles";
 export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="container">
         <section className="closing-cta" aria-labelledby="cta-title">
+          <CtaDoodle />
           <div>
             <p className="eyebrow">YOUR CRAFT. YOUR TEAM. YOUR NEXT CHAPTER.</p>
             <h2 id="cta-title">

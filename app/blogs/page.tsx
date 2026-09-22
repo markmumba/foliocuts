@@ -4,9 +4,10 @@ import ContactCta from "@/components/contact/contact-cta";
 import Footer from "@/components/homepage/footer";
 
 export const metadata: Metadata = {
-  title: "Blog — FolioCuts",
+  title: "Barbershop Management Guides",
   description:
-    "Tips, guides, and insights for running a better barbershop. From commissions to M-Pesa to customer loyalty.",
+    "Practical barbershop management guides for owners in Kenya. Learn about staff commissions, M-Pesa payments, customer loyalty, pricing, and shop growth.",
+  alternates: { canonical: "/blogs" },
 };
 
 export default function BlogsPage() {

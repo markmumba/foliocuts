@@ -3,9 +3,10 @@ import ContactCta from "@/components/contact/contact-cta";
 import Footer from "@/components/homepage/footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — FolioCuts",
+  title: "Privacy Policy",
   description:
     "How FolioCuts collects, uses, and protects your personal information. Read our privacy policy.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -16,7 +17,7 @@ export default function PrivacyPage() {
           <div className="container">
             <div className="legal-header">
               <h1>Privacy Policy</h1>
-              <p className="legal-date">Last Updated: 20 September, 2026</p>
+              <p className="legal-date">Last updated: 21 September 2026</p>
             </div>
             <div className="legal-content">
               <h2>1. Information We Collect</h2>
@@ -57,8 +58,8 @@ export default function PrivacyPage() {
                   customer support requests.
                 </li>
                 <li>
-                  To personalise your experience and deliver targeted content and
-                  advertisements.
+                  To personalise your experience and show information relevant
+                  to your account and shop.
                 </li>
                 <li>
                   To analyse trends, track usage data, and improve the

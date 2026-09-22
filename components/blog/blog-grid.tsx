@@ -32,11 +32,11 @@ export default function BlogGrid() {
           animate={{ opacity: 1, transform: "translateY(0px)" }}
           transition={{ duration: 0.55, ease }}
         >
-          <h1>Blogs &amp; News</h1>
+          <h1>Barbershop management guides</h1>
           <p>
-            Tips, guides, and insights for running a better barbershop.
+            Practical advice for running and growing a barbershop in Kenya.
             <br />
-            From commissions to M-Pesa to customer loyalty.
+            Learn about staff commissions, M-Pesa payments, and customer loyalty.
           </p>
         </motion.div>
 

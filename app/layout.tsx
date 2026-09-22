@@ -9,9 +9,21 @@ const inter = Inter({
   display: "swap",
 });
 export const metadata: Metadata = {
-  title: "FolioCuts — Your shop, beautifully in order",
+  metadataBase: new URL("https://foliocuts.markian.fit"),
+  title: {
+    default: "FolioCuts | Barbershop Management Software in Kenya",
+    template: "%s | FolioCuts",
+  },
   description:
-    "Run your barbershop with clarity. Track cash and M-Pesa payments, staff commissions, and customer loyalty with FolioCuts. Built for Kenyan barbershops and salons.",
+    "Barbershop management software for Kenyan barbershops and salons. Track cash and M-Pesa payments, staff commissions, customer records, and loyalty in one place.",
+  openGraph: {
+    type: "website",
+    locale: "en_KE",
+    siteName: "FolioCuts",
+    title: "FolioCuts | Barbershop Management Software in Kenya",
+    description:
+      "Manage payments, staff commissions, customer records, and loyalty with software built for Kenyan barbershops and salons.",
+  },
 };
 export default function RootLayout({
   children,

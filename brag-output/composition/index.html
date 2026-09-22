@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1280">
+  <title>FolioCuts — Brag Video</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- GSAP for Hyperframes-compatible timeline animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <style>
+    /* ─── Palette ─────────────────────────────────────────────────── */
+    :root {
+      --forest:  #063b26;
+      --lime:    #cfff92;
+      --ink:     #08251a;
+      --paper:   #f5f6f4;
+      --muted:   #5b6961;
+      --white:   #ffffff;
+      --border:  #e1e6df;
+      --accent2: #1a6b43;
+    }
+
+    /* ─── Reset + base ────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--forest);
+    }
+
+    /* ─── Composition root ────────────────────────────────────────── */
+    #composition {
+      width: 1280px;
+      height: 720px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ─── Scene base ──────────────────────────────────────────────── */
+    .scene.clip {
+      position: absolute;
+      inset: 0;
+      width: 1280px;
+      height: 720px;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ─── Scene 1 – Hook ──────────────────────────────────────────── */
+    #scene-hook {
+      background: var(--forest);
+      flex-direction: column;
+      gap: 0;
+    }
+
+    /* audio-reactive glow layer on the forest-green hero scene */
+    .hook-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(207,255,146,0.06) 0%, rgba(207,255,146,0) 70%);
+      pointer-events: none;
+    }
+
+    .hook-line.clip {
+      font-size: 88px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      text-align: center;
+      letter-spacing: -2px;
+      opacity: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hook-line span.lime { color: var(--lime); }
+
+    /* ─── Scene 2 – Commission ────────────────────────────────────── */
+    #scene-commission {
+      background: var(--white);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .commission-card.clip {
+      width: 560px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(6,59,38,0.08), 0 1px 4px rgba(6,59,38,0.04);
+      opacity: 0;
+    }
+
+    .commission-card-header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .commission-card-header .eyebrow {
+      color: var(--accent2);
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .barber-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--lime);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink);
+      flex-shrink: 0;
+    }
+
+    .barber-info { flex: 1; }
+
+    .barber-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .barber-meta {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .service-rows { padding: 0 24px; }
+
+    .service-row.clip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border);
+      opacity: 0;
+    }
+
+    .service-row.clip:last-child { border-bottom: none; }
+
+    .service-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .service-rate {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .service-amount {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--forest);
+    }
+
+    .commission-total.clip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      background: #f0f9f4;
+      border-top: 2px solid var(--lime);
+      opacity: 0;
+    }
+
+    .total-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--forest);
+    }
+
+    .total-amount {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--forest);
+    }
+
+    .caption.clip {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--muted);
+      opacity: 0;
+      text-align: center;
+    }
+
+    /* ─── Scene 3 – M-Pesa + Loyalty ─────────────────────────────── */
+    #scene-mpesa {
+      background: var(--white);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .mpesa-card.clip {
+      width: 380px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(6,59,38,0.08), 0 1px 4px rgba(6,59,38,0.04);
+      padding: 28px 28px 24px;
+      opacity: 0;
+    }
+
+    .mpesa-header {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .mpesa-check.clip {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      opacity: 0;
+    }
+
+    .mpesa-check.clip svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--lime);
+      stroke-width: 3;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .mpesa-amount {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--ink);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .mpesa-status {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--forest);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .mpesa-details {
+      background: var(--paper);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .mpesa-detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 0;
+    }
+
+    .mpesa-detail-row + .mpesa-detail-row {
+      border-top: 1px solid var(--border);
+      margin-top: 6px;
+      padding-top: 10px;
+    }
+
+    .detail-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .detail-value {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .detail-value.completed {
+      color: var(--forest);
+      background: rgba(207,255,146,0.3);
+      padding: 2px 8px;
+      border-radius: 100px;
+      font-size: 11px;
+    }
+
+    .loyalty-card.clip {
+      width: 340px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(6,59,38,0.08), 0 1px 4px rgba(6,59,38,0.04);
+      padding: 24px 24px 20px;
+      opacity: 0;
+    }
+
+    .loyalty-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .loyalty-badge {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--forest);
+      background: var(--lime);
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    .loyalty-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .loyalty-greeting {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+
+    .stamps-grid {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .stamp {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--border);
+    }
+
+    .stamp.filled {
+      background: rgba(6,59,38,0.08);
+      border-color: var(--forest);
+    }
+
+    .stamp.empty {
+      background: transparent;
+      border-color: var(--border);
+      border-style: dashed;
+    }
+
+    .stamp svg { width: 22px; height: 22px; }
+    .stamp.filled svg { stroke: var(--forest); fill: var(--forest); }
+    .stamp.empty svg { stroke: var(--border); fill: none; }
+
+    .loyalty-progress {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .loyalty-cta {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--forest);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+
+    .loyalty-cta span {
+      color: var(--lime);
+      background: var(--forest);
+      padding: 1px 8px;
+      border-radius: 6px;
+    }
+
+    /* ─── Scene 4 – Stats ─────────────────────────────────────────── */
+    #scene-stats {
+      background: var(--paper);
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stats-row {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 80px;
+      width: 100%;
+    }
+
+    .stat-block.clip {
+      text-align: center;
+      opacity: 0;
+    }
+
+    .stat-number {
+      font-size: 96px;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .stat-label {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .stat-kenya {
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--ink);
+      text-align: center;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .stat-kenya-under {
+      display: block;
+      width: 120px;
+      height: 5px;
+      background: var(--lime);
+      border-radius: 3px;
+      margin: 10px auto 0;
+    }
+
+    /* ─── Scene 5 – Outro ─────────────────────────────────────────── */
+    #scene-outro {
+      background: var(--forest);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .outro-logo.clip {
+      font-size: 72px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -2px;
+      opacity: 0;
+      margin-bottom: 12px;
+    }
+
+    .outro-logo.clip span { color: var(--lime); }
+
+    .outro-tagline.clip {
+      font-size: 17px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 36px;
+      opacity: 0;
+    }
+
+    .outro-cta.clip {
+      display: inline-block;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 18px;
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 100px;
+      opacity: 0;
+      margin-bottom: 16px;
+    }
+
+    .outro-sub.clip {
+      font-size: 13px;
+      color: rgba(207,255,146,0.65);
+      font-weight: 400;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+<div data-hf-id="hf-gcws" id="composition" class="clip" data-composition-id="foliocuts-brag" data-duration="22" data-width="1280" data-height="720">
+
+  <!-- ──────────────────────────────────────────────────────────────
+       AUDIO
+  ───────────────────────────────────────────────────────────────── -->
+
+  <!-- Music bed: track-index 10, volume 0.32, fades to 0.10 at 17.5s-19.5s -->
+  <audio data-hf-id="hf-0pyx" id="bg-music" data-start="0" data-duration="22" data-track-index="10" data-volume="0.32" src="assets/music/happy-beats-business-moves-vol-12-by-ende-dot-app.mp3"></audio>
+
+  <!-- SFX: commission row 1 — beat-grid: item 1 at 6.56s -->
+  <audio data-hf-id="hf-tbpe" id="sfx-row1" data-start="6.56" data-duration="0.11" data-track-index="11" data-volume="0.65" src="assets/sfx/interface/drop_001.ogg"></audio>
+
+  <!-- SFX: commission row 2 — beat-grid: item 2 at 7.64s -->
+  <audio data-hf-id="hf-1kqg" id="sfx-row2" data-start="7.64" data-duration="0.11" data-track-index="12" data-volume="0.65" src="assets/sfx/interface/drop_001.ogg"></audio>
+
+  <!-- SFX: commission row 3 + total — beat-locked: 8.74s -->
+  <audio data-hf-id="hf-t3ic" id="sfx-row3" data-start="8.74" data-duration="0.11" data-track-index="13" data-volume="0.65" src="assets/sfx/interface/drop_001.ogg"></audio>
+
+  <!-- SFX: M-Pesa bell — beat-locked: 13.11s -->
+  <audio data-hf-id="hf-ai8x" id="sfx-mpesa" data-start="13.11" data-duration="1.48" data-track-index="14" data-volume="0.75" src="assets/sfx/impact/impactBell_heavy_000.ogg"></audio>
+
+  <!-- SFX: stat 1 — beat-grid: item 1 at 14.20s -->
+  <audio data-hf-id="hf-tnqf" id="sfx-stat1" data-start="14.20" data-duration="0.11" data-track-index="15" data-volume="0.60" src="assets/sfx/interface/drop_001.ogg"></audio>
+
+  <!-- SFX: stat 2 — beat-grid: item 2 at 15.84s -->
+  <audio data-hf-id="hf-7gxa" id="sfx-stat2" data-start="15.84" data-duration="0.11" data-track-index="16" data-volume="0.60" src="assets/sfx/interface/drop_001.ogg"></audio>
+
+  <!-- SFX: logo landing — beat-locked: 17.47s -->
+  <audio data-hf-id="hf-5fbl" id="sfx-logo" data-start="17.47" data-duration="0.19" data-track-index="17" data-volume="0.55" src="assets/sfx/impact/impactSoft_medium_001.ogg"></audio>
+
+  <!-- ──────────────────────────────────────────────────────────────
+       SCENE 1 — HOOK
+       t=0s → t=3s
+  ───────────────────────────────────────────────────────────────── -->
+  <div data-hf-id="hf-d5w1" id="scene-hook" class="scene clip" data-start="0" data-duration="3">
+
+    <!-- audio-reactive glow: forest-green hero background breathes with music RMS -->
+    <div data-hf-id="hf-kew0" class="hook-glow" id="hook-glow"></div>
+
+    <div data-hf-id="hf-ja2r" style="display:flex;flex-direction:column;align-items:center;gap:4px;position:relative;z-index:1;">
+      <div data-hf-id="hf-eopw" class="hook-line clip" id="hook-line1" data-start="0.2" data-duration="2.8">
+        Your shop.
+      </div>
+      <div data-hf-id="hf-ypox" class="hook-line clip" id="hook-line2" data-start="0.5" data-duration="2.5">
+        <span data-hf-id="hf-g91e" class="lime">Beautifully</span> in order.
+      </div>
+    </div>
+  </div>
+
+  <!-- ──────────────────────────────────────────────────────────────
+       SCENE 2 — COMMISSION BREAKDOWN
+       t=3s → t=9s
+  ───────────────────────────────────────────────────────────────── -->
+  <div data-hf-id="hf-zt17" id="scene-commission" class="scene clip" data-start="3" data-duration="6">
+
+    <div data-hf-id="hf-jtye" style="display:flex;flex-direction:column;align-items:center;gap:20px;">
+
+      <div data-hf-id="hf-e716" class="commission-card clip" id="commission-card" data-start="3.3" data-duration="5.7">
+
+        <div data-hf-id="hf-icm0" class="commission-card-header">
+          <div data-hf-id="hf-f52b" class="eyebrow">Staff Commissions</div>
+          <div data-hf-id="hf-t2yh" class="card-title">Commission breakdown · Today</div>
+        </div>
+
+        <div data-hf-id="hf-0v1x" class="barber-row">
+          <div data-hf-id="hf-2d3g" class="avatar">BO</div>
+          <div data-hf-id="hf-qoi3" class="barber-info">
+            <div data-hf-id="hf-jzu0" class="barber-name">Brian Otieno</div>
+            <div data-hf-id="hf-ouvp" class="barber-meta">Barber · 3 completed services</div>
+          </div>
+          <div data-hf-id="hf-q5dt" style="font-size:11px;font-weight:700;color:var(--accent2);background:rgba(207,255,146,0.25);padding:4px 10px;border-radius:100px;">40% rate</div>
+        </div>
+
+        <div data-hf-id="hf-q6hx" class="service-rows">
+          <!-- Row 1: beat-grid: item 1 at 6.56s // beat-grid: item 1 at 6.56s -->
+          <div data-hf-id="hf-aw9a" class="service-row clip" id="row1" data-start="6.56" data-duration="2.44">
+            <div data-hf-id="hf-yeow">
+              <div data-hf-id="hf-v6zx" class="service-name">Haircut &amp; beard</div>
+              <div data-hf-id="hf-al1w" class="service-rate">40% commission</div>
+            </div>
+            <div data-hf-id="hf-sjck" class="service-amount">KES 320</div>
+          </div>
+
+          <!-- Row 2: beat-grid: item 2 at 7.64s // beat-grid: item 2 at 7.64s -->
+          <div data-hf-id="hf-b80b" class="service-row clip" id="row2" data-start="7.64" data-duration="1.36">
+            <div data-hf-id="hf-y7yw">
+              <div data-hf-id="hf-e46d" class="service-name">Classic haircut</div>
+              <div data-hf-id="hf-7igc" class="service-rate">40% commission</div>
+            </div>
+            <div data-hf-id="hf-1v0x" class="service-amount">KES 200</div>
+          </div>
+
+          <!-- Row 3: beat-locked: 8.74s // beat-locked: 8.74s -->
+          <div data-hf-id="hf-ados" class="service-row clip" id="row3" data-start="8.74" data-duration="0.26">
+            <div data-hf-id="hf-x11t">
+              <div data-hf-id="hf-wpn9" class="service-name">Fade &amp; styling</div>
+              <div data-hf-id="hf-6bj9" class="service-rate">40% commission</div>
+            </div>
+            <div data-hf-id="hf-jv2t" class="service-amount">KES 240</div>
+          </div>
+        </div>
+
+        <!-- Total: beat-locked: 8.74s // beat-locked: 8.74s -->
+        <div data-hf-id="hf-yck1" class="commission-total clip" id="commission-total" data-start="8.74" data-duration="0.26">
+          <div data-hf-id="hf-rgmz" class="total-label">Total commission earned</div>
+          <div data-hf-id="hf-8k27" class="total-amount">KES 760</div>
+        </div>
+
+      </div><!-- /.commission-card -->
+
+      <div data-hf-id="hf-p35l" class="caption clip" id="commission-caption" data-start="8.9" data-duration="0.1">
+        Commission tracking. Automatic.
+      </div>
+
+    </div>
+  </div><!-- /#scene-commission -->
+
+  <!-- ──────────────────────────────────────────────────────────────
+       SCENE 3 — M-PESA + LOYALTY
+       t=9s → t=13.5s
+  ───────────────────────────────────────────────────────────────── -->
+  <div data-hf-id="hf-uizr" id="scene-mpesa" class="scene clip" data-start="9" data-duration="4.5">
+
+    <!-- M-Pesa Card — slides in from left -->
+    <div data-hf-id="hf-5cik" class="mpesa-card clip" id="mpesa-card" data-start="9.3" data-duration="4.2">
+
+      <div data-hf-id="hf-zrcu" class="mpesa-header">M-PESA Payment Confirmation</div>
+
+      <!-- checkmark: beat-locked: 13.11s -->
+      <div data-hf-id="hf-3s7m" class="mpesa-check clip" id="mpesa-check" data-start="13.11" data-duration="0.39">
+        <svg data-hf-id="hf-ulu9" viewBox="0 0 24 24">
+          <polyline data-hf-id="hf-mlxs" points="20 6 9 17 4 12" />
+        </svg>
+      </div>
+
+      <div data-hf-id="hf-qgdc" class="mpesa-amount">KES 800.00</div>
+      <div data-hf-id="hf-t0l6" class="mpesa-status">Payment received</div>
+
+      <div data-hf-id="hf-fvt9" class="mpesa-details">
+        <div data-hf-id="hf-6rwd" class="mpesa-detail-row">
+          <span data-hf-id="hf-uafb" class="detail-label">Customer</span>
+          <span data-hf-id="hf-5rpf" class="detail-value">James Kamau</span>
+        </div>
+        <div data-hf-id="hf-l7m9" class="mpesa-detail-row">
+          <span data-hf-id="hf-zgsm" class="detail-label">Service</span>
+          <span data-hf-id="hf-2x5e" class="detail-value">Haircut &amp; beard trim</span>
+        </div>
+        <div data-hf-id="hf-mejc" class="mpesa-detail-row">
+          <span data-hf-id="hf-nyut" class="detail-label">Status</span>
+          <span data-hf-id="hf-ug7u" class="detail-value completed">Completed</span>
+        </div>
+      </div>
+    </div><!-- /.mpesa-card -->
+
+    <!-- Loyalty Card — slides in from right -->
+    <div data-hf-id="hf-vqy9" class="loyalty-card clip" id="loyalty-card" data-start="9.8" data-duration="3.7">
+
+      <div data-hf-id="hf-dyak" class="loyalty-header">
+        <span data-hf-id="hf-wvx3" class="loyalty-badge">Loyalty</span>
+      </div>
+      <div data-hf-id="hf-44mf" class="loyalty-title" style="margin-top:10px;">The regulars club</div>
+      <div data-hf-id="hf-yl31" class="loyalty-greeting">Looking sharp, James.</div>
+
+      <div data-hf-id="hf-3rrx" class="stamps-grid">
+        <!-- 5 filled scissors stamps -->
+        <div data-hf-id="hf-w95f" class="stamp filled">
+          <svg data-hf-id="hf-srig" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle data-hf-id="hf-t51r" cx="6" cy="6" r="3" /><circle data-hf-id="hf-2o6c" cx="6" cy="18" r="3" />
+            <line data-hf-id="hf-jbp7" x1="20" y1="4" x2="8.12" y2="15.88" />
+            <line data-hf-id="hf-1lbt" x1="14.47" y1="14.48" x2="20" y2="20" />
+            <line data-hf-id="hf-jz3m" x1="8.12" y1="8.12" x2="12" y2="12" />
+          </svg>
+        </div>
+        <div data-hf-id="hf-cp83" class="stamp filled">
+          <svg data-hf-id="hf-r9vk" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle data-hf-id="hf-ttkf" cx="6" cy="6" r="3" /><circle data-hf-id="hf-ckgs" cx="6" cy="18" r="3" />
+            <line data-hf-id="hf-fjqz" x1="20" y1="4" x2="8.12" y2="15.88" />
+            <line data-hf-id="hf-rbil" x1="14.47" y1="14.48" x2="20" y2="20" />
+            <line data-hf-id="hf-d8vq" x1="8.12" y1="8.12" x2="12" y2="12" />
+          </svg>
+        </div>
+        <div data-hf-id="hf-cax2" class="stamp filled">
+          <svg data-hf-id="hf-q2yh" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle data-hf-id="hf-tf9e" cx="6" cy="6" r="3" /><circle data-hf-id="hf-bdjp" cx="6" cy="18" r="3" />
+            <line data-hf-id="hf-f5fy" x1="20" y1="4" x2="8.12" y2="15.88" />
+            <line data-hf-id="hf-sifo" x1="14.47" y1="14.48" x2="20" y2="20" />
+            <line data-hf-id="hf-dn6r" x1="8.12" y1="8.12" x2="12" y2="12" />
+          </svg>
+        </div>
+        <div data-hf-id="hf-bwm1" class="stamp filled">
+          <svg data-hf-id="hf-qh9i" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle data-hf-id="hf-t0yd" cx="6" cy="6" r="3" /><circle data-hf-id="hf-bruq" cx="6" cy="18" r="3" />
+            <line data-hf-id="hf-er4x" x1="20" y1="4" x2="8.12" y2="15.88" />
+            <line data-hf-id="hf-s44n" x1="14.47" y1="14.48" x2="20" y2="20" />
+            <line data-hf-id="hf-e1hs" x1="8.12" y1="8.12" x2="12" y2="12" />
+          </svg>
+        </div>
+        <div data-hf-id="hf-bib0" class="stamp filled">
+          <svg data-hf-id="hf-pacf" viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle data-hf-id="hf-vt3k" cx="6" cy="6" r="3" /><circle data-hf-id="hf-drdv" cx="6" cy="18" r="3" />
+            <line data-hf-id="hf-ectw" x1="20" y1="4" x2="8.12" y2="15.88" />
+            <line data-hf-id="hf-tb1q" x1="14.47" y1="14.48" x2="20" y2="20" />
+            <line data-hf-id="hf-b9cl" x1="8.12" y1="8.12" x2="12" y2="12" />
+          </svg>
+        </div>
+        <!-- 1 empty gift stamp -->
+        <div data-hf-id="hf-agwi" class="stamp empty">
+          <svg data-hf-id="hf-xyka" viewBox="0 0 24 24" stroke="#e1e6df" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <polyline data-hf-id="hf-i4fg" points="20 12 20 22 4 22 4 12" />
+            <rect data-hf-id="hf-p4he" x="2" y="7" width="20" height="5" />
+            <line data-hf-id="hf-v09x" x1="12" y1="22" x2="12" y2="7" />
+            <path data-hf-id="hf-io1i" d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+            <path data-hf-id="hf-9tyi" d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+          </svg>
+        </div>
+      </div>
+
+      <div data-hf-id="hf-a2fo" class="loyalty-progress">5 of 6 visits</div>
+      <div data-hf-id="hf-iwm4" class="loyalty-cta">One more. <span data-hf-id="hf-fga2">One on us.</span></div>
+    </div><!-- /.loyalty-card -->
+
+  </div><!-- /#scene-mpesa -->
+
+  <!-- ──────────────────────────────────────────────────────────────
+       SCENE 4 — STATS
+       t=13.5s → t=17.5s
+  ───────────────────────────────────────────────────────────────── -->
+  <div data-hf-id="hf-gx4b" id="scene-stats" class="scene clip" data-start="13.5" data-duration="4">
+
+    <div data-hf-id="hf-ohca" class="stats-row">
+
+      <!-- Stat 1: beat-grid: item 1 at 14.20s // beat-grid: item 1 at 14.20s -->
+      <div data-hf-id="hf-195g" class="stat-block clip" id="stat1" data-start="14.20" data-duration="3.3">
+        <div data-hf-id="hf-cmnu" class="stat-number">50+</div>
+        <div data-hf-id="hf-0lcc" class="stat-label">Active shops</div>
+      </div>
+
+      <!-- Stat 2: beat-grid: item 2 at 15.84s // beat-grid: item 2 at 15.84s -->
+      <div data-hf-id="hf-i11z" class="stat-block clip" id="stat2" data-start="15.84" data-duration="1.66">
+        <div data-hf-id="hf-wu0c" class="stat-number">25%</div>
+        <div data-hf-id="hf-j4fb" class="stat-label">Avg. revenue increase</div>
+      </div>
+
+      <!-- Stat 3 "Built for Kenya": beat-locked: 17.47s // beat-locked: 17.47s -->
+      <div data-hf-id="hf-r6cp" class="stat-block clip" id="stat3" data-start="17.47" data-duration="0.03">
+        <div data-hf-id="hf-1alg" class="stat-kenya">Built for Kenya</div>
+        <span data-hf-id="hf-gcvx" class="stat-kenya-under"></span>
+      </div>
+
+    </div>
+  </div><!-- /#scene-stats -->
+
+  <!-- ──────────────────────────────────────────────────────────────
+       SCENE 5 — OUTRO
+       t=17.5s → t=22s
+  ───────────────────────────────────────────────────────────────── -->
+  <div data-hf-id="hf-hitm" id="scene-outro" class="scene clip" data-start="17.5" data-duration="4.5">
+
+    <!-- Logo: beat-locked: 17.47s (lands at scene open) // beat-locked: 17.47s -->
+    <div data-hf-id="hf-000b" class="outro-logo clip" id="outro-logo" data-start="17.7" data-duration="4.3">
+      Folio<span data-hf-id="hf-7ijg">Cuts</span>
+    </div>
+
+    <div data-hf-id="hf-ezze" class="outro-tagline clip" id="outro-tagline" data-start="18.1" data-duration="3.9">
+      Your shop. Beautifully in order.
+    </div>
+
+    <div data-hf-id="hf-q6xx" class="outro-cta clip" id="outro-cta" data-start="18.7" data-duration="3.3">
+      Start your free trial →
+    </div>
+
+    <div data-hf-id="hf-ba94" class="outro-sub clip" id="outro-sub" data-start="19.3" data-duration="2.7">
+      No credit card · 3-minute setup
+    </div>
+
+  </div><!-- /#scene-outro -->
+
+</div><!-- /#composition -->
+
+<script>
+/* ────────────────────────────────────────────────────────────────────
+   FolioCuts brag video — Hyperframes composition
+   Duration: 22s | 1280×720 | tone: polished
+   Uses GSAP for all animation (seek-safe, frame-sync compatible)
+────────────────────────────────────────────────────────────────────── */
+(function () {
+  'use strict';
+
+  const COMPOSITION_ID = 'foliocuts-brag';
+  const TOTAL          = 22; // seconds
+
+  // ── GSAP master timeline ──────────────────────────────────────────
+  const tl = gsap.timeline({
+    paused: true,
+    defaults: { ease: 'power3.out' },
+  });
+
+  // ── Register on window.__timelines (Hyperframes requirement) ──────
+  window.__timelines = window.__timelines || {};
+  window.__timelines[COMPOSITION_ID] = tl;
+
+  // ── Helpers ───────────────────────────────────────────────────────
+  // Add a tween at an absolute global time with relative duration
+  function at(time, targets, fromVars, vars, duration) {
+    tl.fromTo(targets, fromVars, { ...vars, duration }, time);
+  }
+
+  // Fade a scene in at scene-start and out at scene-end
+  function scene(id, start, dur, crossfade) {
+    const cf = crossfade || 0.25;
+    tl.fromTo('#' + id,
+      { opacity: 0 },
+      { opacity: 1, duration: cf, ease: 'power2.inOut' },
+      start
+    );
+    if (start + dur < TOTAL) {
+      tl.to('#' + id, { opacity: 0, duration: cf, ease: 'power2.inOut' }, start + dur - cf);
+    }
+  }
+
+  // ────────────────────────────────────────────────────────────────
+  // SCENE 1 — HOOK  (0s – 3s)
+  // ────────────────────────────────────────────────────────────────
+  scene('scene-hook', 0, 3);
+
+  // "Your shop."  — fade up
+  tl.fromTo('#hook-line1',
+    { opacity: 0, y: 16 },
+    { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' },
+    0.2
+  );
+
+  // "Beautifully in order."  — staggered fade up
+  tl.fromTo('#hook-line2',
+    { opacity: 0, y: 16 },
+    { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' },
+    0.5
+  );
+
+  // Audio-reactive glow on hook-glow element (forest-green hero scene)
+  // Simulated RMS breathing: subtle radial lime glow pulses on the bg.
+  // Implemented as a series of GSAP tweens that modulate opacity of
+  // the glow layer — no waveform bars, no strobing. Very subtle.
+  tl.fromTo('#hook-glow',
+    { opacity: 0.3 },
+    {
+      opacity: 0.7,
+      duration: 1.5,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: 1,
+    },
+    0.2
+  );
+
+  // ────────────────────────────────────────────────────────────────
+  // SCENE 2 — COMMISSION BREAKDOWN  (3s – 9s)
+  // ────────────────────────────────────────────────────────────────
+  scene('scene-commission', 3, 6);
+
+  // Card fade in
+  tl.fromTo('#commission-card',
+    { opacity: 0, y: 12 },
+    { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' },
+    3.3
+  );
+
+  // Row 1 — beat-grid: item 1 at 6.56s
+  tl.fromTo('#row1',
+    { opacity: 0, x: -12 },
+    { opacity: 1, x: 0, duration: 0.25, ease: 'power3.out' },
+    6.56  // beat-grid: item 1 at 6.56s
+  );
+
+  // Row 2 — beat-grid: item 2 at 7.64s
+  tl.fromTo('#row2',
+    { opacity: 0, x: -12 },
+    { opacity: 1, x: 0, duration: 0.25, ease: 'power3.out' },
+    7.64  // beat-grid: item 2 at 7.64s
+  );
+
+  // Row 3 — beat-locked: 8.74s
+  tl.fromTo('#row3',
+    { opacity: 0, x: -12 },
+    { opacity: 1, x: 0, duration: 0.25, ease: 'power3.out' },
+    8.74  // beat-locked: 8.74s
+  );
+
+  // Commission total — beat-locked: 8.74s
+  tl.fromTo('#commission-total',
+    { opacity: 0, y: 6 },
+    { opacity: 1, y: 0, duration: 0.30, ease: 'power3.out' },
+    8.74  // beat-locked: 8.74s
+  );
+
+  // Caption
+  tl.fromTo('#commission-caption',
+    { opacity: 0 },
+    { opacity: 1, duration: 0.35, ease: 'power2.out' },
+    8.9
+  );
+
+  // ────────────────────────────────────────────────────────────────
+  // SCENE 3 — M-PESA + LOYALTY  (9s – 13.5s)
+  // ────────────────────────────────────────────────────────────────
+  scene('scene-mpesa', 9, 4.5);
+
+  // M-Pesa card slides from left
+  tl.fromTo('#mpesa-card',
+    { opacity: 0, x: -24 },
+    { opacity: 1, x: 0, duration: 0.4, ease: 'power3.out' },
+    9.3
+  );
+
+  // Loyalty card slides from right
+  tl.fromTo('#loyalty-card',
+    { opacity: 0, x: 24 },
+    { opacity: 1, x: 0, duration: 0.4, ease: 'power3.out' },
+    9.8
+  );
+
+  // M-Pesa checkmark — beat-locked: 13.11s  (scale 0.3→1, spring pop)
+  tl.fromTo('#mpesa-check',
+    { opacity: 0, scale: 0.3 },
+    { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(1.7)' },
+    13.11  // beat-locked: 13.11s
+  );
+
+  // ────────────────────────────────────────────────────────────────
+  // SCENE 4 — STATS  (13.5s – 17.5s)
+  // ────────────────────────────────────────────────────────────────
+  scene('scene-stats', 13.5, 4);
+
+  // Stat 1 — beat-grid: item 1 at 14.20s
+  tl.fromTo('#stat1',
+    { opacity: 0, scale: 0.92 },
+    { opacity: 1, scale: 1, duration: 0.30, ease: 'power3.out' },
+    14.20  // beat-grid: item 1 at 14.20s
+  );
+
+  // Stat 2 — beat-grid: item 2 at 15.84s
+  tl.fromTo('#stat2',
+    { opacity: 0, scale: 0.92 },
+    { opacity: 1, scale: 1, duration: 0.30, ease: 'power3.out' },
+    15.84  // beat-grid: item 2 at 15.84s
+  );
+
+  // Stat 3 "Built for Kenya" — beat-locked: 17.47s
+  tl.fromTo('#stat3',
+    { opacity: 0, scale: 0.92 },
+    { opacity: 1, scale: 1, duration: 0.30, ease: 'power3.out' },
+    17.47  // beat-locked: 17.47s
+  );
+
+  // ────────────────────────────────────────────────────────────────
+  // SCENE 5 — OUTRO  (17.5s – 22s)
+  // ────────────────────────────────────────────────────────────────
+  scene('scene-outro', 17.5, 4.5);
+
+  // Logo — beat-locked: 17.47s (lands at scene open, ~17.7 after crossfade)
+  tl.fromTo('#outro-logo',
+    { opacity: 0, y: 8 },
+    { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' },
+    17.7  // beat-locked: 17.47s
+  );
+
+  // Tagline
+  tl.fromTo('#outro-tagline',
+    { opacity: 0 },
+    { opacity: 1, duration: 0.35, ease: 'power2.out' },
+    18.1
+  );
+
+  // CTA button
+  tl.fromTo('#outro-cta',
+    { opacity: 0, y: 10 },
+    { opacity: 1, y: 0, duration: 0.35, ease: 'power3.out' },
+    18.7
+  );
+
+  // Sub-copy
+  tl.fromTo('#outro-sub',
+    { opacity: 0 },
+    { opacity: 1, duration: 0.35, ease: 'power2.out' },
+    19.3
+  );
+
+  // Music fade — volume 0.32→0.10 over 17.5s–19.5s
+  // Implemented via GSAP onUpdate on a proxy object since GSAP can't
+  // tween audio.volume directly without a plugin. We use a JS object.
+  const musicProxy = { vol: 0.32 };
+  const bgMusic = document.getElementById('bg-music');
+  tl.to(musicProxy, {
+    vol: 0.10,
+    duration: 2,
+    ease: 'power1.inOut',
+    onUpdate() {
+      if (bgMusic) bgMusic.volume = musicProxy.vol;
+    },
+  }, 17.5);
+
+  // ────────────────────────────────────────────────────────────────
+  // Playback: expose Hyperframes seek API
+  // ────────────────────────────────────────────────────────────────
+  window.__hf = {
+    seek(sec) { tl.seek(sec, false); },
+    play()    { tl.play(); },
+    pause()   { tl.pause(); },
+    get currentTime() { return tl.time(); },
+    get duration()    { return TOTAL; },
+  };
+
+  // Auto-play (headless render support)
+  tl.play();
+
+})();
+</script>
+</body>
+</html>

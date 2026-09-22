@@ -16,8 +16,8 @@ const ease: Easing = [0.23, 1, 0.32, 1];
 const plans = [
   {
     name: "Basic",
-    monthly: 2500,
-    yearly: 2000,
+    monthly: 2999,
+    yearly: 32000,
     description: "A little structure for your growing shop.",
     icon: Scissors,
     includes: [
@@ -29,9 +29,9 @@ const plans = [
     ],
   },
   {
-    name: "Pro",
-    monthly: 4500,
-    yearly: 3600,
+    name: "Premium",
+    monthly: 5999,
+    yearly: 64000,
     description: "More room for a busy team to thrive.",
     icon: Sprout,
     lime: true,
@@ -46,13 +46,13 @@ const plans = [
   },
   {
     name: "Enterprise",
-    monthly: 7500,
-    yearly: 6000,
+    monthly: 12999,
+    yearly: 139000,
     description: "For bigger teams with bigger plans.",
     icon: Store,
     includes: [
       "16+ staff members",
-      "Everything in Pro",
+      "Everything in Premium",
       "Advanced business analytics",
       "Custom commission rules",
       "Dedicated onboarding support",
@@ -79,9 +79,9 @@ export default function PricingHero() {
           animate={{ opacity: 1, transform: "translateY(0px)" }}
           transition={{ duration: 0.55, ease }}
         >
-          <h1 id="pricing-page-title">Pricing Plan</h1>
+          <h1 id="pricing-page-title">Barbershop software pricing</h1>
           <p className="hero-description">
-            Simple, transparent pricing for barbershops and salons.
+            Simple pricing for barbershop and salon management software.
             <br />
             Every plan starts with a free trial — no payment details required.
           </p>
@@ -107,7 +107,7 @@ export default function PricingHero() {
           <span className={yearly ? "active" : ""}>
             Billed yearly
           </span>
-          {yearly && <span className="save-badge">Save up to 20%</span>}
+          {yearly && <span className="save-badge">Save about 11%</span>}
         </motion.div>
 
         {/* Plan cards — compact */}
@@ -147,7 +147,7 @@ export default function PricingHero() {
                   </motion.span>
                 </AnimatePresence>
                 <span className="price-detail">
-                  / per shop<br />/ per month
+                  / per shop<br />/ per {yearly ? "year" : "month"}
                 </span>
               </div>
 

@@ -174,10 +174,10 @@ export default function FeaturesHero() {
           animate={{ opacity: 1, transform: "translateY(0px)" }}
           transition={{ duration: 0.55, ease }}
         >
-          <h1>Features</h1>
+          <h1>Barbershop management features</h1>
           <p className="hero-description">
-            Service records, commissions, M-Pesa, loyalty. Everything in one
-            place — so the business side takes care of itself.
+            Record services, calculate staff commissions, confirm M-Pesa
+            payments, and reward loyal customers from one barbershop dashboard.
           </p>
         </motion.div>
 

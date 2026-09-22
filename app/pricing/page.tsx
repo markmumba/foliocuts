@@ -6,9 +6,10 @@ import FAQ from "@/components/homepage/faq";
 import Footer from "@/components/homepage/footer";
 
 export const metadata: Metadata = {
-  title: "Pricing — FolioCuts",
+  title: "Barbershop Management Software Pricing",
   description:
-    "Simple, transparent pricing for barbershops and salons. Service records, staff commissions, M-Pesa payments, and customer loyalty — starting at KES 2,500/month.",
+    "Simple, transparent pricing for barbershops and salons. Service records, staff commissions, M-Pesa payments, and customer loyalty — starting at KES 2,999/month.",
+  alternates: { canonical: "/pricing" },
 };
 
 export default function PricingPage() {

@@ -4,11 +4,10 @@ import { ArrowUpRight, Check, Scissors, Sprout, Store } from "lucide-react";
 import { registerUrl } from "@/lib/links";
 import { ease, fadeUp, staggerContainer } from "@/components/ui/reveal";
 
-// Preserve the existing landing page's advertised monthly pricing.
 const plans = [
   {
     name: "Basic",
-    price: "2,500",
+    price: "2,999",
     description: "A little structure for your growing shop.",
     icon: Scissors,
     features: [
@@ -20,8 +19,8 @@ const plans = [
     ],
   },
   {
-    name: "Pro",
-    price: "4,500",
+    name: "Premium",
+    price: "5,999",
     description: "More room for a busy team to thrive.",
     icon: Sprout,
     features: [
@@ -35,12 +34,12 @@ const plans = [
   },
   {
     name: "Enterprise",
-    price: "7,500",
+    price: "12,999",
     description: "For bigger teams with bigger plans.",
     icon: Store,
     features: [
       "16+ staff members",
-      "Everything in Pro",
+      "Everything in Premium",
       "Advanced business analytics",
       "Custom commission rules",
       "Dedicated onboarding",
