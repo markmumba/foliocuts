@@ -2,7 +2,9 @@
 import { motion, useReducedMotion } from "framer-motion";
 import type { Easing, Variants } from "framer-motion";
 import { ArrowUpRight, Clock, Tag } from "lucide-react";
-import { blogPosts } from "@/data/blogs";
+import Link from "next/link";
+import type { BlogCardPost } from "@/sanity/lib/blog";
+import { formatPostDate, formatReadingTime } from "@/sanity/lib/blog";
 
 const ease: Easing = [0.23, 1, 0.32, 1];
 
@@ -20,7 +22,9 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-export default function BlogGrid() {
+const MotionLink = motion.create(Link);
+
+export default function BlogGrid({ posts }: { posts: BlogCardPost[] }) {
   const reduce = useReducedMotion();
 
   return (
@@ -46,10 +50,11 @@ export default function BlogGrid() {
           animate="visible"
           variants={stagger}
         >
-          {blogPosts.map((post) => (
-            <motion.a
+          {posts.map((post) => (
+            <MotionLink
               key={post.slug}
               href={`/blogs/${post.slug}`}
+              aria-label={`Read ${post.title}`}
               className="blog-card"
               variants={fadeUp}
             >
@@ -61,9 +66,9 @@ export default function BlogGrid() {
               </div>
               <div className="blog-card-body">
                 <div className="blog-card-meta">
-                  <span>{post.date}</span>
+                  <span>{formatPostDate(post.publishedAt)}</span>
                   <span>
-                    <Clock size={12} /> {post.readTime}
+                    <Clock size={12} /> {formatReadingTime(post.readingTime)}
                   </span>
                 </div>
                 <h2>{post.title}</h2>
@@ -72,7 +77,7 @@ export default function BlogGrid() {
                   Read more <ArrowUpRight size={14} />
                 </span>
               </div>
-            </motion.a>
+            </MotionLink>
           ))}
         </motion.div>
       </div>

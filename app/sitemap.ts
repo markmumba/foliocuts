@@ -1,9 +1,14 @@
 import type { MetadataRoute } from "next";
-import { blogPosts } from "@/data/blogs";
+import { sanityClient } from "@/sanity/lib/client";
+import { BLOG_SITEMAP_QUERY } from "@/sanity/lib/queries";
+import type { BLOG_SITEMAP_QUERY_RESULT } from "@/sanity.types";
 
 const siteUrl = "https://foliocuts.markian.fit";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const blogPosts = await sanityClient.fetch<BLOG_SITEMAP_QUERY_RESULT>(BLOG_SITEMAP_QUERY, {}, {
+    next: { revalidate: 3600 },
+  });
   const pages = [
     { path: "", priority: 1, changeFrequency: "weekly" as const },
     { path: "/features", priority: 0.9, changeFrequency: "monthly" as const },
@@ -23,7 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...blogPosts.map((post) => ({
       url: `${siteUrl}/blogs/${post.slug}`,
-      lastModified: new Date(post.date),
+      lastModified: new Date(post.lastModified),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
