@@ -1,27 +1,48 @@
 "use client";
+import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import type { Easing } from "framer-motion";
-import { contactEmail } from "@/lib/links";
 
 const ease: Easing = [0.23, 1, 0.32, 1];
 
 export default function ContactForm() {
   const reduce = useReducedMotion();
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  function sendEmail(event: React.FormEvent<HTMLFormElement>) {
+  async function submitDemoRequest(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
     const data = new FormData(event.currentTarget);
-    const name = `${data.get("firstName")} ${data.get("lastName")}`.trim();
-    const subject = String(data.get("subject") || "FolioCuts demo request");
-    const body = [
-      `Name: ${name}`,
-      `Email: ${data.get("email")}`,
-      `Mobile: ${data.get("phone")}`,
-      "",
-      String(data.get("message") || "I would like to book a FolioCuts demo."),
-    ].join("\n");
 
-    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: data.get("firstName"),
+          lastName: data.get("lastName"),
+          email: data.get("email"),
+          phone: data.get("phone"),
+          subject: data.get("subject"),
+          message: data.get("message"),
+          website: data.get("website"),
+          pageUri: window.location.href,
+        }),
+      });
+      const result = await response.json();
+
+      if (!response.ok) throw new Error(result.message || "Unable to send your request.");
+
+      form.reset();
+      setStatus("success");
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : "Unable to send your request.");
+      setStatus("error");
+    }
   }
 
   return (
@@ -43,10 +64,14 @@ export default function ContactForm() {
             </p>
           </div>
 
-          <form className="contact-form" onSubmit={sendEmail}>
+          <form className="contact-form" onSubmit={submitDemoRequest}>
+            <div className="contact-honeypot" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
+            </div>
             <div className="form-row">
               <div className="form-field">
-                <label htmlFor="firstName">Full Name</label>
+                <label htmlFor="firstName">First Name</label>
                 <input
                   id="firstName"
                   name="firstName"
@@ -116,12 +141,21 @@ export default function ContactForm() {
               />
             </div>
 
-            <button type="submit" className="button contact-submit">
-              Send via email
+            <button
+              type="submit"
+              className="button contact-submit"
+              disabled={status === "sending"}
+            >
+              {status === "sending" ? "Sending…" : "Request a demo"}
             </button>
-            <p className="contact-form-note">
-              This opens your email app with the request ready to send.
-            </p>
+            <div className="contact-form-feedback" aria-live="polite">
+              {status === "success" && (
+                <p className="contact-form-success">
+                  Thank you. Your request has been sent and we’ll be in touch soon.
+                </p>
+              )}
+              {status === "error" && <p className="contact-form-error">{errorMessage}</p>}
+            </div>
           </form>
         </motion.div>
       </div>
