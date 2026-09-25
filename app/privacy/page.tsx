@@ -17,7 +17,7 @@ export default function PrivacyPage() {
           <div className="container">
             <div className="legal-header">
               <h1>Privacy Policy</h1>
-              <p className="legal-date">Last updated: 21 September 2026</p>
+              <p className="legal-date">Last updated: 25 September 2026</p>
             </div>
             <div className="legal-content">
               <h2>1. Information We Collect</h2>
@@ -109,7 +109,17 @@ export default function PrivacyPage() {
                 such communications.
               </p>
 
-              <h2>6. Children&apos;s Privacy</h2>
+              <h2>6. HubSpot and Analytics Cookies</h2>
+              <p>
+                We use HubSpot to receive demo requests, manage prospective
+                customer relationships, and understand how visitors use our
+                website. We load HubSpot analytics only after you accept optional
+                analytics cookies. If you decline, you can still browse the site
+                and submit a demo request. You can change your choice at any time
+                using the Cookie settings link in the website footer.
+              </p>
+
+              <h2>7. Children&apos;s Privacy</h2>
               <p>
                 Our website, products, and services are not intended for children
                 under the age of 13. We do not knowingly collect personal

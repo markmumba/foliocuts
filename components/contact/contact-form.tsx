@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import type { Easing } from "framer-motion";
 
 const ease: Easing = [0.23, 1, 0.32, 1];
+const meetingsUrl = process.env.NEXT_PUBLIC_HUBSPOT_MEETINGS_URL;
 
 export default function ContactForm() {
   const reduce = useReducedMotion();
@@ -150,9 +151,14 @@ export default function ContactForm() {
             </button>
             <div className="contact-form-feedback" aria-live="polite">
               {status === "success" && (
-                <p className="contact-form-success">
-                  Thank you. Your request has been sent and we’ll be in touch soon.
-                </p>
+                <div className="contact-form-success">
+                  <p>Thank you. Your request has been sent and we’ll be in touch soon.</p>
+                  {meetingsUrl && (
+                    <a className="button" href={meetingsUrl} target="_blank" rel="noreferrer">
+                      Choose a demo time
+                    </a>
+                  )}
+                </div>
               )}
               {status === "error" && <p className="contact-form-error">{errorMessage}</p>}
             </div>

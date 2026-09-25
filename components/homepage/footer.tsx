@@ -2,6 +2,7 @@ import { ArrowUpRight, Check, Scissors } from "lucide-react";
 import Brand from "@/components/brand";
 import { loginUrl, registerUrl } from "@/lib/links";
 import { CtaDoodle } from "@/components/homepage/doodles";
+import CookieSettingsButton from "@/components/analytics/cookie-settings-button";
 export default function Footer() {
   return (
     <footer className="site-footer">
@@ -69,6 +70,7 @@ export default function Footer() {
             <h3>Legal</h3>
             <a href="/privacy">Privacy Policy</a>
             <a href="/terms">Terms & Conditions</a>
+            <CookieSettingsButton />
           </div>
         </div>
         <div className="footer-bottom">

@@ -47,6 +47,13 @@ export async function POST(request: Request) {
     .filter(Boolean)
     .join('\n\n') || 'I would like to book a FolioCuts demo.'
 
+  const hutk = request.headers
+    .get('cookie')
+    ?.split(';')
+    .map((cookie) => cookie.trim().split('='))
+    .find(([name]) => name === 'hubspotutk')?.[1]
+  const forwardedFor = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim()
+
   const hubspotResponse = await fetch(
     `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`,
     {
@@ -62,6 +69,8 @@ export async function POST(request: Request) {
           {name: 'message', value: combinedMessage},
         ],
         context: {
+          ...(hutk ? {hutk} : {}),
+          ...(forwardedFor ? {ipAddress: forwardedFor} : {}),
           pageUri: clean(body.pageUri) || 'https://foliocuts.markian.fit/contact',
           pageName: 'Book a FolioCuts demo',
         },

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import HubSpotTracking from "@/components/analytics/hubspot-tracking";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,6 +37,7 @@ export default function RootLayout({
         </a>
         <Navbar />
         {children}
+        <HubSpotTracking />
       </body>
     </html>
   );
