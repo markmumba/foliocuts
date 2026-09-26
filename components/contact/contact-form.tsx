@@ -4,7 +4,9 @@ import { motion, useReducedMotion } from "framer-motion";
 import type { Easing } from "framer-motion";
 
 const ease: Easing = [0.23, 1, 0.32, 1];
-const meetingsUrl = process.env.NEXT_PUBLIC_HUBSPOT_MEETINGS_URL;
+const meetingsUrl =
+  process.env.NEXT_PUBLIC_HUBSPOT_MEETINGS_URL ||
+  "https://meetings-eu1.hubspot.com/folicouts?uuid=f027e297-d8a5-42ad-aa05-a9127d589952";
 
 export default function ContactForm() {
   const reduce = useReducedMotion();
